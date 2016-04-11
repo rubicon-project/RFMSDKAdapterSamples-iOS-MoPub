@@ -1,0 +1,792 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14D4045E1A8740C30099330F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D4045D1A8740C30099330F /* main.m */; };
+		14D404611A8740C30099330F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D404601A8740C30099330F /* AppDelegate.m */; };
+		14D404671A8740C30099330F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D404651A8740C30099330F /* Main.storyboard */; };
+		14D404691A8740C30099330F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14D404681A8740C30099330F /* Images.xcassets */; };
+		14D4046C1A8740C30099330F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D4046A1A8740C30099330F /* LaunchScreen.xib */; };
+		14D4048D1A8743470099330F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D4048C1A8743470099330F /* MainViewController.m */; };
+		B40209F81C85266D00402326 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B40209F71C85266D00402326 /* libPods.a */; };
+		B4365E691BB5E1B900548E14 /* AddTestCaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4365E681BB5E1B900548E14 /* AddTestCaseViewController.m */; };
+		B4365E6D1BB5E1F700548E14 /* AddTestCaseTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4365E6C1BB5E1F700548E14 /* AddTestCaseTextFieldCell.m */; };
+		B4365E701BB5E4B300548E14 /* AddTestCasePickerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4365E6F1BB5E4B300548E14 /* AddTestCasePickerViewCell.m */; };
+		B4365E761BB627BD00548E14 /* AppSettingsMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4365E731BB627BD00548E14 /* AppSettingsMenuViewController.m */; };
+		B4365E771BB627BD00548E14 /* AppSettingsMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4365E751BB627BD00548E14 /* AppSettingsMenuCell.m */; };
+		B4365E7F1BB9E0C800548E14 /* TestCaseSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4365E7E1BB9E0C800548E14 /* TestCaseSettingsViewController.m */; };
+		B4365E901BBB1C2D00548E14 /* MoPubRFMSampleSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4365E8D1BBB1C2D00548E14 /* MoPubRFMSampleSettings.plist */; };
+		B4365E911BBB1C2D00548E14 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = B4365E8F1BBB1C2D00548E14 /* Settings.m */; };
+		B4365E931BBB4F1900548E14 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B4365E921BBB4F1900548E14 /* libxml2.2.tbd */; };
+		B442841C1BB0D4A900EC0241 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B442841B1BB0D4A900EC0241 /* MainTableViewCell.m */; };
+		B44284241BB0D82200EC0241 /* AboutViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B44284211BB0D82200EC0241 /* AboutViewCell.m */; };
+		B44284251BB0D82200EC0241 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44284231BB0D82200EC0241 /* AboutViewController.m */; };
+		B442843A1BB3331600EC0241 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44284391BB3331600EC0241 /* BaseTableViewController.m */; };
+		B442843E1BB356D700EC0241 /* AdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B442843D1BB356D700EC0241 /* AdViewController.m */; };
+		B44284421BB357B400EC0241 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44284411BB357B400EC0241 /* BaseViewController.m */; };
+		B44284461BB35ED400EC0241 /* RPLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B44284451BB35ED400EC0241 /* RPLogger.m */; };
+		B47E14511BC889660083FB0E /* SettingsCheckboxTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E144C1BC889660083FB0E /* SettingsCheckboxTextFieldCell.m */; };
+		B47E14521BC889660083FB0E /* SettingsSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E144E1BC889660083FB0E /* SettingsSwitchCell.m */; };
+		B47E14531BC889660083FB0E /* SettingsTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E14501BC889660083FB0E /* SettingsTextFieldCell.m */; };
+		B47E145B1BCC8A740083FB0E /* RPDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E145A1BCC8A740083FB0E /* RPDeviceInfo.m */; };
+		B47E14621BCD7DED0083FB0E /* AppSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E14611BCD7DED0083FB0E /* AppSettingsViewController.m */; };
+		B47E14651BCD7ED80083FB0E /* SettingsPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E14641BCD7ED80083FB0E /* SettingsPickerCell.m */; };
+		B47E14681BCD7F180083FB0E /* SettingsKeyValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E14671BCD7F180083FB0E /* SettingsKeyValueCell.m */; };
+		B47E146B1BCD9EE40083FB0E /* SettingsLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E146A1BCD9EE40083FB0E /* SettingsLabelCell.m */; };
+		B4BF84DB1BCDCD980045CCB2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4BF84DA1BCDCD980045CCB2 /* CoreLocation.framework */; };
+		B4EAD5321C8E4BFA00F27686 /* RFMMoPubBannerAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAD52D1C8E4BFA00F27686 /* RFMMoPubBannerAdapter.m */; };
+		B4EAD5331C8E4BFA00F27686 /* RFMMoPubInterstitialAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAD52F1C8E4BFA00F27686 /* RFMMoPubInterstitialAdapter.m */; };
+		B4EAD5341C8E4BFA00F27686 /* RFMMoPubInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAD5311C8E4BFA00F27686 /* RFMMoPubInterstitialViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		14D4045C1A8740C30099330F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14D4045D1A8740C30099330F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		14D4045F1A8740C30099330F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		14D404601A8740C30099330F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		14D404661A8740C30099330F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14D404681A8740C30099330F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		14D4046B1A8740C30099330F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		14D4048B1A8743470099330F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		14D4048C1A8743470099330F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		14D404941A874AD30099330F /* TRPConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TRPConstants.h; sourceTree = "<group>"; };
+		336C45C316E263E236D49AF0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		6F34B580BBB0D6C04F43C662 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B40209F61C85255A00402326 /* MoPub-RFM Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MoPub-RFM Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B40209F71C85266D00402326 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		B4365E671BB5E1B900548E14 /* AddTestCaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTestCaseViewController.h; sourceTree = "<group>"; };
+		B4365E681BB5E1B900548E14 /* AddTestCaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTestCaseViewController.m; sourceTree = "<group>"; };
+		B4365E6B1BB5E1F700548E14 /* AddTestCaseTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTestCaseTextFieldCell.h; sourceTree = "<group>"; };
+		B4365E6C1BB5E1F700548E14 /* AddTestCaseTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTestCaseTextFieldCell.m; sourceTree = "<group>"; };
+		B4365E6E1BB5E4B300548E14 /* AddTestCasePickerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTestCasePickerViewCell.h; sourceTree = "<group>"; };
+		B4365E6F1BB5E4B300548E14 /* AddTestCasePickerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTestCasePickerViewCell.m; sourceTree = "<group>"; };
+		B4365E721BB627BD00548E14 /* AppSettingsMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettingsMenuViewController.h; sourceTree = "<group>"; };
+		B4365E731BB627BD00548E14 /* AppSettingsMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettingsMenuViewController.m; sourceTree = "<group>"; };
+		B4365E741BB627BD00548E14 /* AppSettingsMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettingsMenuCell.h; sourceTree = "<group>"; };
+		B4365E751BB627BD00548E14 /* AppSettingsMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettingsMenuCell.m; sourceTree = "<group>"; };
+		B4365E7D1BB9E0C800548E14 /* TestCaseSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseSettingsViewController.h; sourceTree = "<group>"; };
+		B4365E7E1BB9E0C800548E14 /* TestCaseSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCaseSettingsViewController.m; sourceTree = "<group>"; };
+		B4365E8D1BBB1C2D00548E14 /* MoPubRFMSampleSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MoPubRFMSampleSettings.plist; sourceTree = "<group>"; };
+		B4365E8E1BBB1C2D00548E14 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		B4365E8F1BBB1C2D00548E14 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		B4365E921BBB4F1900548E14 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		B442841A1BB0D4A900EC0241 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
+		B442841B1BB0D4A900EC0241 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
+		B44284201BB0D82200EC0241 /* AboutViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewCell.h; sourceTree = "<group>"; };
+		B44284211BB0D82200EC0241 /* AboutViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewCell.m; sourceTree = "<group>"; };
+		B44284221BB0D82200EC0241 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		B44284231BB0D82200EC0241 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		B44284381BB3331600EC0241 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		B44284391BB3331600EC0241 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		B442843C1BB356D700EC0241 /* AdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdViewController.h; sourceTree = "<group>"; };
+		B442843D1BB356D700EC0241 /* AdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdViewController.m; sourceTree = "<group>"; };
+		B44284401BB357B400EC0241 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		B44284411BB357B400EC0241 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		B44284441BB35ED400EC0241 /* RPLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPLogger.h; sourceTree = "<group>"; };
+		B44284451BB35ED400EC0241 /* RPLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPLogger.m; sourceTree = "<group>"; };
+		B44284481BB3629700EC0241 /* MoPub-RFM Sample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MoPub-RFM Sample-Prefix.pch"; sourceTree = "<group>"; };
+		B47E144B1BC889660083FB0E /* SettingsCheckboxTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsCheckboxTextFieldCell.h; sourceTree = "<group>"; };
+		B47E144C1BC889660083FB0E /* SettingsCheckboxTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsCheckboxTextFieldCell.m; sourceTree = "<group>"; };
+		B47E144D1BC889660083FB0E /* SettingsSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSwitchCell.h; sourceTree = "<group>"; };
+		B47E144E1BC889660083FB0E /* SettingsSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSwitchCell.m; sourceTree = "<group>"; };
+		B47E144F1BC889660083FB0E /* SettingsTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTextFieldCell.h; sourceTree = "<group>"; };
+		B47E14501BC889660083FB0E /* SettingsTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTextFieldCell.m; sourceTree = "<group>"; };
+		B47E14591BCC8A740083FB0E /* RPDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPDeviceInfo.h; sourceTree = "<group>"; };
+		B47E145A1BCC8A740083FB0E /* RPDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPDeviceInfo.m; sourceTree = "<group>"; };
+		B47E14601BCD7DED0083FB0E /* AppSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettingsViewController.h; sourceTree = "<group>"; };
+		B47E14611BCD7DED0083FB0E /* AppSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettingsViewController.m; sourceTree = "<group>"; };
+		B47E14631BCD7ED80083FB0E /* SettingsPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsPickerCell.h; sourceTree = "<group>"; };
+		B47E14641BCD7ED80083FB0E /* SettingsPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsPickerCell.m; sourceTree = "<group>"; };
+		B47E14661BCD7F180083FB0E /* SettingsKeyValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsKeyValueCell.h; sourceTree = "<group>"; };
+		B47E14671BCD7F180083FB0E /* SettingsKeyValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsKeyValueCell.m; sourceTree = "<group>"; };
+		B47E14691BCD9EE40083FB0E /* SettingsLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsLabelCell.h; sourceTree = "<group>"; };
+		B47E146A1BCD9EE40083FB0E /* SettingsLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsLabelCell.m; sourceTree = "<group>"; };
+		B4BF84DA1BCDCD980045CCB2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B4EAD52B1C8E4BFA00F27686 /* RFMMoPubAdapterConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFMMoPubAdapterConstants.h; sourceTree = "<group>"; };
+		B4EAD52C1C8E4BFA00F27686 /* RFMMoPubBannerAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFMMoPubBannerAdapter.h; sourceTree = "<group>"; };
+		B4EAD52D1C8E4BFA00F27686 /* RFMMoPubBannerAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFMMoPubBannerAdapter.m; sourceTree = "<group>"; };
+		B4EAD52E1C8E4BFA00F27686 /* RFMMoPubInterstitialAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFMMoPubInterstitialAdapter.h; sourceTree = "<group>"; };
+		B4EAD52F1C8E4BFA00F27686 /* RFMMoPubInterstitialAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFMMoPubInterstitialAdapter.m; sourceTree = "<group>"; };
+		B4EAD5301C8E4BFA00F27686 /* RFMMoPubInterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFMMoPubInterstitialViewController.h; sourceTree = "<group>"; };
+		B4EAD5311C8E4BFA00F27686 /* RFMMoPubInterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFMMoPubInterstitialViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14D404551A8740C30099330F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B40209F81C85266D00402326 /* libPods.a in Frameworks */,
+				B4BF84DB1BCDCD980045CCB2 /* CoreLocation.framework in Frameworks */,
+				B4365E931BBB4F1900548E14 /* libxml2.2.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14D4044F1A8740C30099330F = {
+			isa = PBXGroup;
+			children = (
+				B4EAD52A1C8E4BFA00F27686 /* RFM-MoPubAdapter */,
+				14D4045A1A8740C30099330F /* MoPub-RFM Sample */,
+				5F0AC7993D8ED48A9CF5FC71 /* Pods */,
+				6CF512275C9D3E90D81BB280 /* Frameworks */,
+				B40209F61C85255A00402326 /* MoPub-RFM Sample.app */,
+			);
+			sourceTree = "<group>";
+		};
+		14D4045A1A8740C30099330F /* MoPub-RFM Sample */ = {
+			isa = PBXGroup;
+			children = (
+				14D404811A87425E0099330F /* Application */,
+				B4365E8C1BBB1C1B00548E14 /* Models */,
+				14D404831A87429E0099330F /* Controllers */,
+				14D404841A87429E0099330F /* Library */,
+				14D4045B1A8740C30099330F /* Supporting Files */,
+			);
+			path = "MoPub-RFM Sample";
+			sourceTree = "<group>";
+		};
+		14D4045B1A8740C30099330F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				14D4045C1A8740C30099330F /* Info.plist */,
+				14D4045D1A8740C30099330F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14D404811A87425E0099330F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B44284481BB3629700EC0241 /* MoPub-RFM Sample-Prefix.pch */,
+				14D4045F1A8740C30099330F /* AppDelegate.h */,
+				14D404601A8740C30099330F /* AppDelegate.m */,
+				14D404651A8740C30099330F /* Main.storyboard */,
+				14D404681A8740C30099330F /* Images.xcassets */,
+				14D4046A1A8740C30099330F /* LaunchScreen.xib */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		14D404831A87429E0099330F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B4365E791BB9C22B00548E14 /* TestCaseSettings */,
+				B4365E711BB6278C00548E14 /* AppSettingsMenu */,
+				B44284471BB35ED800EC0241 /* Helpers */,
+				B44284431BB357BF00EC0241 /* BaseView */,
+				B442843B1BB3331B00EC0241 /* BaseTableView */,
+				B442843F1BB356DC00EC0241 /* AdPreview */,
+				B442841F1BB0D7F400EC0241 /* About */,
+				B44284491BB4810400EC0241 /* Main */,
+				B4365E6A1BB5E1BD00548E14 /* AddTestCase */,
+				B47E145F1BCD7D920083FB0E /* AppSettings */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		14D404841A87429E0099330F /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				14D404941A874AD30099330F /* TRPConstants.h */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		5F0AC7993D8ED48A9CF5FC71 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F34B580BBB0D6C04F43C662 /* Pods.debug.xcconfig */,
+				336C45C316E263E236D49AF0 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6CF512275C9D3E90D81BB280 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4BF84DA1BCDCD980045CCB2 /* CoreLocation.framework */,
+				B4365E921BBB4F1900548E14 /* libxml2.2.tbd */,
+				B40209F71C85266D00402326 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4365E6A1BB5E1BD00548E14 /* AddTestCase */ = {
+			isa = PBXGroup;
+			children = (
+				B4365E671BB5E1B900548E14 /* AddTestCaseViewController.h */,
+				B4365E681BB5E1B900548E14 /* AddTestCaseViewController.m */,
+				B4365E6B1BB5E1F700548E14 /* AddTestCaseTextFieldCell.h */,
+				B4365E6C1BB5E1F700548E14 /* AddTestCaseTextFieldCell.m */,
+				B4365E6E1BB5E4B300548E14 /* AddTestCasePickerViewCell.h */,
+				B4365E6F1BB5E4B300548E14 /* AddTestCasePickerViewCell.m */,
+			);
+			name = AddTestCase;
+			sourceTree = "<group>";
+		};
+		B4365E711BB6278C00548E14 /* AppSettingsMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B4365E721BB627BD00548E14 /* AppSettingsMenuViewController.h */,
+				B4365E731BB627BD00548E14 /* AppSettingsMenuViewController.m */,
+				B4365E741BB627BD00548E14 /* AppSettingsMenuCell.h */,
+				B4365E751BB627BD00548E14 /* AppSettingsMenuCell.m */,
+			);
+			name = AppSettingsMenu;
+			sourceTree = "<group>";
+		};
+		B4365E791BB9C22B00548E14 /* TestCaseSettings */ = {
+			isa = PBXGroup;
+			children = (
+				B4365E7D1BB9E0C800548E14 /* TestCaseSettingsViewController.h */,
+				B4365E7E1BB9E0C800548E14 /* TestCaseSettingsViewController.m */,
+			);
+			name = TestCaseSettings;
+			sourceTree = "<group>";
+		};
+		B4365E8C1BBB1C1B00548E14 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B4365E8D1BBB1C2D00548E14 /* MoPubRFMSampleSettings.plist */,
+				B4365E8E1BBB1C2D00548E14 /* Settings.h */,
+				B4365E8F1BBB1C2D00548E14 /* Settings.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B442841F1BB0D7F400EC0241 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				B44284201BB0D82200EC0241 /* AboutViewCell.h */,
+				B44284211BB0D82200EC0241 /* AboutViewCell.m */,
+				B44284221BB0D82200EC0241 /* AboutViewController.h */,
+				B44284231BB0D82200EC0241 /* AboutViewController.m */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+		B442843B1BB3331B00EC0241 /* BaseTableView */ = {
+			isa = PBXGroup;
+			children = (
+				B47E14541BC8896F0083FB0E /* Cells */,
+				B44284381BB3331600EC0241 /* BaseTableViewController.h */,
+				B44284391BB3331600EC0241 /* BaseTableViewController.m */,
+			);
+			name = BaseTableView;
+			sourceTree = "<group>";
+		};
+		B442843F1BB356DC00EC0241 /* AdPreview */ = {
+			isa = PBXGroup;
+			children = (
+				B442843C1BB356D700EC0241 /* AdViewController.h */,
+				B442843D1BB356D700EC0241 /* AdViewController.m */,
+			);
+			name = AdPreview;
+			sourceTree = "<group>";
+		};
+		B44284431BB357BF00EC0241 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				B44284401BB357B400EC0241 /* BaseViewController.h */,
+				B44284411BB357B400EC0241 /* BaseViewController.m */,
+			);
+			name = BaseView;
+			sourceTree = "<group>";
+		};
+		B44284471BB35ED800EC0241 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B47E14591BCC8A740083FB0E /* RPDeviceInfo.h */,
+				B47E145A1BCC8A740083FB0E /* RPDeviceInfo.m */,
+				B44284441BB35ED400EC0241 /* RPLogger.h */,
+				B44284451BB35ED400EC0241 /* RPLogger.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		B44284491BB4810400EC0241 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B442841A1BB0D4A900EC0241 /* MainTableViewCell.h */,
+				B442841B1BB0D4A900EC0241 /* MainTableViewCell.m */,
+				14D4048B1A8743470099330F /* MainViewController.h */,
+				14D4048C1A8743470099330F /* MainViewController.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		B47E14541BC8896F0083FB0E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B47E14691BCD9EE40083FB0E /* SettingsLabelCell.h */,
+				B47E146A1BCD9EE40083FB0E /* SettingsLabelCell.m */,
+				B47E14661BCD7F180083FB0E /* SettingsKeyValueCell.h */,
+				B47E14671BCD7F180083FB0E /* SettingsKeyValueCell.m */,
+				B47E14631BCD7ED80083FB0E /* SettingsPickerCell.h */,
+				B47E14641BCD7ED80083FB0E /* SettingsPickerCell.m */,
+				B47E144B1BC889660083FB0E /* SettingsCheckboxTextFieldCell.h */,
+				B47E144C1BC889660083FB0E /* SettingsCheckboxTextFieldCell.m */,
+				B47E144D1BC889660083FB0E /* SettingsSwitchCell.h */,
+				B47E144E1BC889660083FB0E /* SettingsSwitchCell.m */,
+				B47E144F1BC889660083FB0E /* SettingsTextFieldCell.h */,
+				B47E14501BC889660083FB0E /* SettingsTextFieldCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		B47E145F1BCD7D920083FB0E /* AppSettings */ = {
+			isa = PBXGroup;
+			children = (
+				B47E14601BCD7DED0083FB0E /* AppSettingsViewController.h */,
+				B47E14611BCD7DED0083FB0E /* AppSettingsViewController.m */,
+			);
+			name = AppSettings;
+			sourceTree = "<group>";
+		};
+		B4EAD52A1C8E4BFA00F27686 /* RFM-MoPubAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				B4EAD52B1C8E4BFA00F27686 /* RFMMoPubAdapterConstants.h */,
+				B4EAD52C1C8E4BFA00F27686 /* RFMMoPubBannerAdapter.h */,
+				B4EAD52D1C8E4BFA00F27686 /* RFMMoPubBannerAdapter.m */,
+				B4EAD52E1C8E4BFA00F27686 /* RFMMoPubInterstitialAdapter.h */,
+				B4EAD52F1C8E4BFA00F27686 /* RFMMoPubInterstitialAdapter.m */,
+				B4EAD5301C8E4BFA00F27686 /* RFMMoPubInterstitialViewController.h */,
+				B4EAD5311C8E4BFA00F27686 /* RFMMoPubInterstitialViewController.m */,
+			);
+			name = "RFM-MoPubAdapter";
+			path = "../RFM-MoPubAdapter";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14D404571A8740C30099330F /* MoPub-RFM Sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14D4047B1A8740C30099330F /* Build configuration list for PBXNativeTarget "MoPub-RFM Sample" */;
+			buildPhases = (
+				868D86D1CE3768D104DED6F0 /* Check Pods Manifest.lock */,
+				14D404541A8740C30099330F /* Sources */,
+				14D404551A8740C30099330F /* Frameworks */,
+				14D404561A8740C30099330F /* Resources */,
+				6427239D4B9F0106D530DCD9 /* Copy Pods Resources */,
+				09552DEB66011A0BBE2EA865 /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MoPub-RFM Sample";
+			productName = "MoPub-RFM Sample";
+			productReference = B40209F61C85255A00402326 /* MoPub-RFM Sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14D404501A8740C30099330F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Rubicon Project";
+				TargetAttributes = {
+					14D404571A8740C30099330F = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 14D404531A8740C30099330F /* Build configuration list for PBXProject "MoPub-RFM Sample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14D4044F1A8740C30099330F;
+			productRefGroup = 14D4044F1A8740C30099330F;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14D404571A8740C30099330F /* MoPub-RFM Sample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14D404561A8740C30099330F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14D404671A8740C30099330F /* Main.storyboard in Resources */,
+				14D4046C1A8740C30099330F /* LaunchScreen.xib in Resources */,
+				14D404691A8740C30099330F /* Images.xcassets in Resources */,
+				B4365E901BBB1C2D00548E14 /* MoPubRFMSampleSettings.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09552DEB66011A0BBE2EA865 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6427239D4B9F0106D530DCD9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		868D86D1CE3768D104DED6F0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14D404541A8740C30099330F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B44284241BB0D82200EC0241 /* AboutViewCell.m in Sources */,
+				B47E14521BC889660083FB0E /* SettingsSwitchCell.m in Sources */,
+				B442843E1BB356D700EC0241 /* AdViewController.m in Sources */,
+				B44284461BB35ED400EC0241 /* RPLogger.m in Sources */,
+				B44284251BB0D82200EC0241 /* AboutViewController.m in Sources */,
+				14D404611A8740C30099330F /* AppDelegate.m in Sources */,
+				B44284421BB357B400EC0241 /* BaseViewController.m in Sources */,
+				B47E14531BC889660083FB0E /* SettingsTextFieldCell.m in Sources */,
+				B442841C1BB0D4A900EC0241 /* MainTableViewCell.m in Sources */,
+				B4365E761BB627BD00548E14 /* AppSettingsMenuViewController.m in Sources */,
+				B47E14511BC889660083FB0E /* SettingsCheckboxTextFieldCell.m in Sources */,
+				B4EAD5331C8E4BFA00F27686 /* RFMMoPubInterstitialAdapter.m in Sources */,
+				B4365E691BB5E1B900548E14 /* AddTestCaseViewController.m in Sources */,
+				B4365E771BB627BD00548E14 /* AppSettingsMenuCell.m in Sources */,
+				B4EAD5341C8E4BFA00F27686 /* RFMMoPubInterstitialViewController.m in Sources */,
+				B4365E701BB5E4B300548E14 /* AddTestCasePickerViewCell.m in Sources */,
+				B4365E7F1BB9E0C800548E14 /* TestCaseSettingsViewController.m in Sources */,
+				14D4045E1A8740C30099330F /* main.m in Sources */,
+				B47E146B1BCD9EE40083FB0E /* SettingsLabelCell.m in Sources */,
+				B47E14621BCD7DED0083FB0E /* AppSettingsViewController.m in Sources */,
+				B47E14681BCD7F180083FB0E /* SettingsKeyValueCell.m in Sources */,
+				B4EAD5321C8E4BFA00F27686 /* RFMMoPubBannerAdapter.m in Sources */,
+				B442843A1BB3331600EC0241 /* BaseTableViewController.m in Sources */,
+				B4365E911BBB1C2D00548E14 /* Settings.m in Sources */,
+				14D4048D1A8743470099330F /* MainViewController.m in Sources */,
+				B4365E6D1BB5E1F700548E14 /* AddTestCaseTextFieldCell.m in Sources */,
+				B47E14651BCD7ED80083FB0E /* SettingsPickerCell.m in Sources */,
+				B47E145B1BCC8A740083FB0E /* RPDeviceInfo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		14D404651A8740C30099330F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14D404661A8740C30099330F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		14D4046A1A8740C30099330F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14D4046B1A8740C30099330F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14D404791A8740C30099330F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		14D4047A1A8740C30099330F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		14D4047C1A8740C30099330F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F34B580BBB0D6C04F43C662 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MoPub-RFM Sample/MoPub-RFM Sample-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "MoPub-RFM Sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"ColorUtils\"",
+					"-l\"SVProgressHUD\"",
+					"-l\"iOS-Color-Picker\"",
+					"-l\"mopub-ios-sdk\"",
+					"-l\"xml2\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"EventKit\"",
+					"-framework",
+					"\"EventKitUI\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"RFMAdSDK\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"StoreKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rubiconproject.MoPub-RFM-Sample-FastLane";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		14D4047D1A8740C30099330F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 336C45C316E263E236D49AF0 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MoPub-RFM Sample/MoPub-RFM Sample-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "MoPub-RFM Sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"ColorUtils\"",
+					"-l\"SVProgressHUD\"",
+					"-l\"iOS-Color-Picker\"",
+					"-l\"mopub-ios-sdk\"",
+					"-l\"xml2\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"EventKit\"",
+					"-framework",
+					"\"EventKitUI\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"RFMAdSDK\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"StoreKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rubiconproject.MoPub-RFM-Sample-FastLane";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14D404531A8740C30099330F /* Build configuration list for PBXProject "MoPub-RFM Sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14D404791A8740C30099330F /* Debug */,
+				14D4047A1A8740C30099330F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14D4047B1A8740C30099330F /* Build configuration list for PBXNativeTarget "MoPub-RFM Sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14D4047C1A8740C30099330F /* Debug */,
+				14D4047D1A8740C30099330F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14D404501A8740C30099330F /* Project object */;
+}

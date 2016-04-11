@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>testCaseSelectedKey</key>
+	<string></string>
+	<key>appSettings</key>
+	<dict>
+		<key>refreshCount</key>
+		<integer>0</integer>
+		<key>refreshInterval</key>
+		<integer>0</integer>
+		<key>locationType</key>
+		<string>none</string>
+		<key>latitude</key>
+		<string>0</string>
+		<key>longitude</key>
+		<string>0</string>
+		<key>targetingKeyValues</key>
+		<dict/>
+	</dict>
+	<key>testCases</key>
+	<dict>
+		<key>0</key>
+		<dict>
+			<key>testCaseAdIsFullscreen</key>
+			<false/>
+			<key>testCaseTestAdId</key>
+			<integer>0</integer>
+			<key>testCaseTestModeEnabled</key>
+			<false/>
+			<key>testCaseAdHeight</key>
+			<integer>50</integer>
+			<key>testCaseAdWidth</key>
+			<integer>320</integer>
+			<key>testCaseAdType</key>
+			<integer>0</integer>
+			<key>testCaseName</key>
+			<string>FastLane Banner</string>
+			<key>testCaseMopubSiteId</key>
+			<string>70dc597677e542b7b27d44b28afa5c9d</string>
+		</dict>
+		<key>1</key>
+		<dict>
+			<key>testCaseAdIsFullscreen</key>
+			<true/>
+			<key>testCaseTestAdId</key>
+			<integer>0</integer>
+			<key>testCaseTestModeEnabled</key>
+			<false/>
+			<key>testCaseAdHeight</key>
+			<integer>0</integer>
+			<key>testCaseAdWidth</key>
+			<integer>0</integer>
+			<key>testCaseAdType</key>
+			<integer>1</integer>
+			<key>testCaseName</key>
+			<string>FastLane Interstitial</string>
+			<key>testCaseMopubSiteId</key>
+			<string>b0d570f590d14e9f95967af34216633c</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

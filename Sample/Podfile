@@ -1,0 +1,13 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '7.0'
+
+workspace 'MoPub-RFM Sample.xcworkspace'
+xcodeproj 'MoPub-RFM Sample.xcodeproj'
+
+pod 'mopub-ios-sdk'
+pod 'RFMAdSDK', '~> 4.1'
+
+pod 'ColorUtils', '~> 1.1'
+pod 'iOS-Color-Picker', '~> 1.1'
+pod 'SVProgressHUD', '~> 1.1'
+pod 'CocoaLumberjack'
