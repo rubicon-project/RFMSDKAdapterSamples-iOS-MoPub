@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EB23614C75025E5555FEF76 /* libPods-MoPub-RFM Sample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F162DCBF407DD9B5B04DA46 /* libPods-MoPub-RFM Sample.a */; };
 		14D4045E1A8740C30099330F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D4045D1A8740C30099330F /* main.m */; };
 		14D404611A8740C30099330F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D404601A8740C30099330F /* AppDelegate.m */; };
 		14D404671A8740C30099330F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D404651A8740C30099330F /* Main.storyboard */; };
 		14D404691A8740C30099330F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14D404681A8740C30099330F /* Images.xcassets */; };
 		14D4046C1A8740C30099330F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D4046A1A8740C30099330F /* LaunchScreen.xib */; };
 		14D4048D1A8743470099330F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D4048C1A8743470099330F /* MainViewController.m */; };
-		B40209F81C85266D00402326 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B40209F71C85266D00402326 /* libPods.a */; };
 		B4365E691BB5E1B900548E14 /* AddTestCaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4365E681BB5E1B900548E14 /* AddTestCaseViewController.m */; };
 		B4365E6D1BB5E1F700548E14 /* AddTestCaseTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4365E6C1BB5E1F700548E14 /* AddTestCaseTextFieldCell.m */; };
 		B4365E701BB5E4B300548E14 /* AddTestCasePickerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4365E6F1BB5E4B300548E14 /* AddTestCasePickerViewCell.m */; };
@@ -39,9 +39,6 @@
 		B47E14681BCD7F180083FB0E /* SettingsKeyValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E14671BCD7F180083FB0E /* SettingsKeyValueCell.m */; };
 		B47E146B1BCD9EE40083FB0E /* SettingsLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E146A1BCD9EE40083FB0E /* SettingsLabelCell.m */; };
 		B4BF84DB1BCDCD980045CCB2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4BF84DA1BCDCD980045CCB2 /* CoreLocation.framework */; };
-		B4EAD5321C8E4BFA00F27686 /* RFMMoPubBannerAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAD52D1C8E4BFA00F27686 /* RFMMoPubBannerAdapter.m */; };
-		B4EAD5331C8E4BFA00F27686 /* RFMMoPubInterstitialAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAD52F1C8E4BFA00F27686 /* RFMMoPubInterstitialAdapter.m */; };
-		B4EAD5341C8E4BFA00F27686 /* RFMMoPubInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAD5311C8E4BFA00F27686 /* RFMMoPubInterstitialViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,10 +52,8 @@
 		14D4048B1A8743470099330F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		14D4048C1A8743470099330F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		14D404941A874AD30099330F /* TRPConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TRPConstants.h; sourceTree = "<group>"; };
-		336C45C316E263E236D49AF0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		6F34B580BBB0D6C04F43C662 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		1F162DCBF407DD9B5B04DA46 /* libPods-MoPub-RFM Sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoPub-RFM Sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B40209F61C85255A00402326 /* MoPub-RFM Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MoPub-RFM Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B40209F71C85266D00402326 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		B4365E671BB5E1B900548E14 /* AddTestCaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTestCaseViewController.h; sourceTree = "<group>"; };
 		B4365E681BB5E1B900548E14 /* AddTestCaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTestCaseViewController.m; sourceTree = "<group>"; };
 		B4365E6B1BB5E1F700548E14 /* AddTestCaseTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTestCaseTextFieldCell.h; sourceTree = "<group>"; };
@@ -107,13 +102,8 @@
 		B47E14691BCD9EE40083FB0E /* SettingsLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsLabelCell.h; sourceTree = "<group>"; };
 		B47E146A1BCD9EE40083FB0E /* SettingsLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsLabelCell.m; sourceTree = "<group>"; };
 		B4BF84DA1BCDCD980045CCB2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		B4EAD52B1C8E4BFA00F27686 /* RFMMoPubAdapterConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFMMoPubAdapterConstants.h; sourceTree = "<group>"; };
-		B4EAD52C1C8E4BFA00F27686 /* RFMMoPubBannerAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFMMoPubBannerAdapter.h; sourceTree = "<group>"; };
-		B4EAD52D1C8E4BFA00F27686 /* RFMMoPubBannerAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFMMoPubBannerAdapter.m; sourceTree = "<group>"; };
-		B4EAD52E1C8E4BFA00F27686 /* RFMMoPubInterstitialAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFMMoPubInterstitialAdapter.h; sourceTree = "<group>"; };
-		B4EAD52F1C8E4BFA00F27686 /* RFMMoPubInterstitialAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFMMoPubInterstitialAdapter.m; sourceTree = "<group>"; };
-		B4EAD5301C8E4BFA00F27686 /* RFMMoPubInterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFMMoPubInterstitialViewController.h; sourceTree = "<group>"; };
-		B4EAD5311C8E4BFA00F27686 /* RFMMoPubInterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFMMoPubInterstitialViewController.m; sourceTree = "<group>"; };
+		CCCE776CA65FA56818B9A48B /* Pods-MoPub-RFM Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoPub-RFM Sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoPub-RFM Sample/Pods-MoPub-RFM Sample.release.xcconfig"; sourceTree = "<group>"; };
+		F99EBADF688D3A696027274B /* Pods-MoPub-RFM Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoPub-RFM Sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoPub-RFM Sample/Pods-MoPub-RFM Sample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,9 +111,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B40209F81C85266D00402326 /* libPods.a in Frameworks */,
 				B4BF84DB1BCDCD980045CCB2 /* CoreLocation.framework in Frameworks */,
 				B4365E931BBB4F1900548E14 /* libxml2.2.tbd in Frameworks */,
+				0EB23614C75025E5555FEF76 /* libPods-MoPub-RFM Sample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,11 +123,10 @@
 		14D4044F1A8740C30099330F = {
 			isa = PBXGroup;
 			children = (
-				B4EAD52A1C8E4BFA00F27686 /* RFM-MoPubAdapter */,
 				14D4045A1A8740C30099330F /* MoPub-RFM Sample */,
-				5F0AC7993D8ED48A9CF5FC71 /* Pods */,
 				6CF512275C9D3E90D81BB280 /* Frameworks */,
 				B40209F61C85255A00402326 /* MoPub-RFM Sample.app */,
+				9D44DB36289E5443D4A95CFE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,23 +189,23 @@
 			path = Library;
 			sourceTree = "<group>";
 		};
-		5F0AC7993D8ED48A9CF5FC71 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6F34B580BBB0D6C04F43C662 /* Pods.debug.xcconfig */,
-				336C45C316E263E236D49AF0 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		6CF512275C9D3E90D81BB280 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				B4BF84DA1BCDCD980045CCB2 /* CoreLocation.framework */,
 				B4365E921BBB4F1900548E14 /* libxml2.2.tbd */,
-				B40209F71C85266D00402326 /* libPods.a */,
+				1F162DCBF407DD9B5B04DA46 /* libPods-MoPub-RFM Sample.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D44DB36289E5443D4A95CFE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F99EBADF688D3A696027274B /* Pods-MoPub-RFM Sample.debug.xcconfig */,
+				CCCE776CA65FA56818B9A48B /* Pods-MoPub-RFM Sample.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		B4365E6A1BB5E1BD00548E14 /* AddTestCase */ = {
@@ -351,21 +340,6 @@
 			name = AppSettings;
 			sourceTree = "<group>";
 		};
-		B4EAD52A1C8E4BFA00F27686 /* RFM-MoPubAdapter */ = {
-			isa = PBXGroup;
-			children = (
-				B4EAD52B1C8E4BFA00F27686 /* RFMMoPubAdapterConstants.h */,
-				B4EAD52C1C8E4BFA00F27686 /* RFMMoPubBannerAdapter.h */,
-				B4EAD52D1C8E4BFA00F27686 /* RFMMoPubBannerAdapter.m */,
-				B4EAD52E1C8E4BFA00F27686 /* RFMMoPubInterstitialAdapter.h */,
-				B4EAD52F1C8E4BFA00F27686 /* RFMMoPubInterstitialAdapter.m */,
-				B4EAD5301C8E4BFA00F27686 /* RFMMoPubInterstitialViewController.h */,
-				B4EAD5311C8E4BFA00F27686 /* RFMMoPubInterstitialViewController.m */,
-			);
-			name = "RFM-MoPubAdapter";
-			path = "../RFM-MoPubAdapter";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -373,12 +347,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14D4047B1A8740C30099330F /* Build configuration list for PBXNativeTarget "MoPub-RFM Sample" */;
 			buildPhases = (
-				868D86D1CE3768D104DED6F0 /* Check Pods Manifest.lock */,
+				E14854B0A1A1DDF96131D21E /* 📦 Check Pods Manifest.lock */,
 				14D404541A8740C30099330F /* Sources */,
 				14D404551A8740C30099330F /* Frameworks */,
 				14D404561A8740C30099330F /* Resources */,
-				6427239D4B9F0106D530DCD9 /* Copy Pods Resources */,
-				09552DEB66011A0BBE2EA865 /* Embed Pods Frameworks */,
+				C5E59DFF33C4E68B1279646C /* 📦 Embed Pods Frameworks */,
+				0B60972803E5CDF685DA72DD /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -436,44 +410,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		09552DEB66011A0BBE2EA865 /* Embed Pods Frameworks */ = {
+		0B60972803E5CDF685DA72DD /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoPub-RFM Sample/Pods-MoPub-RFM Sample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6427239D4B9F0106D530DCD9 /* Copy Pods Resources */ = {
+		C5E59DFF33C4E68B1279646C /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoPub-RFM Sample/Pods-MoPub-RFM Sample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		868D86D1CE3768D104DED6F0 /* Check Pods Manifest.lock */ = {
+		E14854B0A1A1DDF96131D21E /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,17 +473,14 @@
 				B442841C1BB0D4A900EC0241 /* MainTableViewCell.m in Sources */,
 				B4365E761BB627BD00548E14 /* AppSettingsMenuViewController.m in Sources */,
 				B47E14511BC889660083FB0E /* SettingsCheckboxTextFieldCell.m in Sources */,
-				B4EAD5331C8E4BFA00F27686 /* RFMMoPubInterstitialAdapter.m in Sources */,
 				B4365E691BB5E1B900548E14 /* AddTestCaseViewController.m in Sources */,
 				B4365E771BB627BD00548E14 /* AppSettingsMenuCell.m in Sources */,
-				B4EAD5341C8E4BFA00F27686 /* RFMMoPubInterstitialViewController.m in Sources */,
 				B4365E701BB5E4B300548E14 /* AddTestCasePickerViewCell.m in Sources */,
 				B4365E7F1BB9E0C800548E14 /* TestCaseSettingsViewController.m in Sources */,
 				14D4045E1A8740C30099330F /* main.m in Sources */,
 				B47E146B1BCD9EE40083FB0E /* SettingsLabelCell.m in Sources */,
 				B47E14621BCD7DED0083FB0E /* AppSettingsViewController.m in Sources */,
 				B47E14681BCD7F180083FB0E /* SettingsKeyValueCell.m in Sources */,
-				B4EAD5321C8E4BFA00F27686 /* RFMMoPubBannerAdapter.m in Sources */,
 				B442843A1BB3331600EC0241 /* BaseTableViewController.m in Sources */,
 				B4365E911BBB1C2D00548E14 /* Settings.m in Sources */,
 				14D4048D1A8743470099330F /* MainViewController.m in Sources */,
@@ -622,7 +593,7 @@
 		};
 		14D4047C1A8740C30099330F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F34B580BBB0D6C04F43C662 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = F99EBADF688D3A696027274B /* Pods-MoPub-RFM Sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
@@ -694,7 +665,7 @@
 		};
 		14D4047D1A8740C30099330F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 336C45C316E263E236D49AF0 /* Pods.release.xcconfig */;
+			baseConfigurationReference = CCCE776CA65FA56818B9A48B /* Pods-MoPub-RFM Sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COPY_PHASE_STRIP = YES;

@@ -26,7 +26,7 @@
 			<key>testCaseName</key>
 			<string>Banner</string>
 			<key>testCaseMopubSiteId</key>
-			<string>496e8be281af4626925cc933b4d63bb1</string>
+			<string>7782a299fe11423a866bd18c18976b02</string>
 			<key>testCaseAdType</key>
 			<integer>0</integer>
 			<key>testCaseAdWidth</key>
@@ -57,7 +57,7 @@
 			<key>testCaseName</key>
 			<string>Interstitial</string>
 			<key>testCaseMopubSiteId</key>
-			<string>7328bcb2d01c450ea60ec6db3f2d3180</string>
+			<string>91cdae87cd664fc2a9c2cf03ec447e6c</string>
 		</dict>
 	</dict>
 </dict>

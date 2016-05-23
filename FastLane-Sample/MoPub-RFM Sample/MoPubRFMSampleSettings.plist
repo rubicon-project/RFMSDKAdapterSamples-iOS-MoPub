@@ -38,7 +38,7 @@
 			<key>testCaseName</key>
 			<string>FastLane Banner</string>
 			<key>testCaseMopubSiteId</key>
-			<string>70dc597677e542b7b27d44b28afa5c9d</string>
+			<string>ab4101c815864e50af90facae8a6729a</string>
 		</dict>
 		<key>1</key>
 		<dict>
@@ -57,7 +57,7 @@
 			<key>testCaseName</key>
 			<string>FastLane Interstitial</string>
 			<key>testCaseMopubSiteId</key>
-			<string>b0d570f590d14e9f95967af34216633c</string>
+			<string>39537d5daed242238ef5a2d2597242b5</string>
 		</dict>
 	</dict>
 </dict>

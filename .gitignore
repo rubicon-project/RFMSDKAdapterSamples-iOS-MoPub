@@ -25,10 +25,10 @@ xcuserdata
 profile
 .idea/
 
+
 ## Obj-C/Swift specific
 *.hmap
 *.ipa
-
 
 # OS Generated Files #
 ######################

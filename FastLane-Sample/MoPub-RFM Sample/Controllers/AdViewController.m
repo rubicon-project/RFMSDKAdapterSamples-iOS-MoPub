@@ -219,10 +219,10 @@
         }
         
         self.fastlaneRequest = [[RFMAdRequest alloc] initRequestWithServer:@"http://mrp.rubiconproject.com/"
-                                                                  andAppId:@"21FA2A50B2AC01330EEE22000B2E019E"
-                                                                  andPubId:@"111315"];
+                                                                  andAppId:@"AE45DF20EF6E0133146922000B3510F7"
+                                                                  andPubId:@"111008"];
         
-        RFMFastLane *fastLane = [[RFMFastLane alloc] initWithAdView:self.adView delegate:self];
+        RFMFastLane *fastLane = [[RFMFastLane alloc] initWithSize:self.adView.frame.size delegate:self];
         [fastLane preFetchAdWithParams:self.fastlaneRequest];
     } else {
         [self.requestAdButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
@@ -249,7 +249,7 @@
                                                                   andPubId:@"111315"];
         self.fastlaneRequest.rfmAdType = RFM_ADTYPE_INTERSTITIAL;
         
-        RFMFastLane *fastLane = [[RFMFastLane alloc] initWithAdView:self.interstitialAdView.view delegate:self];
+        RFMFastLane *fastLane = [[RFMFastLane alloc] initWithSize:self.adView.frame.size delegate:self];
         [fastLane preFetchAdWithParams:self.fastlaneRequest];
     }
     
