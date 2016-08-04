@@ -48,8 +48,17 @@
 #define TEST_CASE_TEST_MODE_ENABLED_PLIST_KEY @"testCaseTestModeEnabled"
 #define TEST_CASE_TEST_AD_ID_PLIST_KEY @"testCaseTestAdId"
 #define TEST_CASE_AD_IS_FULLSCREEN_PLIST_KEY @"testCaseAdIsFullscreen"
+#define TEST_CASE_FASTLANE_ENABLED_PLIST_KEY @"testCaseFastLaneEnabled"
+#define TEST_CASE_FETCH_ONLY_VIDEO_ADS_KEY @"testCaseFetchOnlyVideoAds"
+#define TEST_CASE_FASTLANE_RFM_APP_ID_PLIST_KEY @"testCaseRfmAppId"
+#define TEST_CASE_FASTLANE_RFM_PUB_ID_PLIST_KEY @"testCaseRfmPubId"
+#define TEST_CASE_SERVER_PLIST_KEY @"testCaseServer"
+#define TEST_CASE_AD_IS_REWARDED_VIDEO_PLIST_KEY @"testCaseAdIsRewardedVideo"
+
 #define PLACEHOLDER_SETTINGS_CUSTOM_SIZE @"Custom Size"
 #define PLACEHOLDER_SETTINGS_TEST_AD_ID @"Ad ID of RFM Ad to be fetched"
+#define PLACEHOLDER_SETTINGS_RFM_APP_ID @"RFM App ID, only if using FastLane"
+#define PLACEHOLDER_SETTINGS_RFM_PUB_ID @"RFM Publisher ID, only if using FastLane"
 
 //MoPub delegate console text
 #define CONSOLE_VIEW_AD_SUCCESS @"Ad success"
@@ -62,6 +71,24 @@
 #define CONSOLE_VIEW_INTERSTITIAL_DID_DISAPPEAR @"Interstitial did disappear"
 #define CONSOLE_VIEW_INTERSTITIAL_DID_EXPIRE @"Interstitial did expire"
 #define CONSOLE_VIEW_INTERSTITIAL_DID_RECEIVE_TAP_EVENT @"Interstitial did receive tap event"
+
+//MoPub Rewarded video delegate console text
+#define CONSOLE_VIEW_SHOULD_REWARD_USER @"Should reward user"
+#define CONSOLE_VIEW_REWARDED_VIDEO_DID_FAIL_TO_PLAY @"Rewarded video did fail to play"
+#define CONSOLE_VIEW_REWARDED_VIDEO_DID_LOAD @"Rewarded video did load"
+#define CONSOLE_VIEW_REWARDED_VIDEO_DID_FAIL_TO_LOAD @"Rewarded video did fail to load"
+#define CONSOLE_VIEW_REWARDED_VIDEO_WILL_APPEAR @"Rewarded video will appear"
+#define CONSOLE_VIEW_REWARDED_VIDEO_DID_APPEAR @"Rewarded video did appear"
+#define CONSOLE_VIEW_REWARDED_VIDEO_WILL_DISAPPEAR @"Rewarded video will disappear"
+#define CONSOLE_VIEW_REWARDED_VIDEO_DID_DISAPPEAR @"Rewarded video did disappear"
+#define CONSOLE_VIEW_REWARDED_VIDEO_DID_EXPIRE @"Rewarded video did expire"
+#define CONSOLE_VIEW_REWARDED_VIDEO_DID_RECEIVE_TAP_EVENT @"Rewarded video did receive tap event"
+
+//FastLane console text
+#define CONSOLE_VIEW_FINAL_FASTLANE_INFO @"Final FastLane ad info"
+#define CONSOLE_VIEW_FINAL_FASTLANE_CUSTOM_TARGETING @"FastLane: Using custom targeting from app settings instead of response"
+#define CONSOLE_VIEW_FINAL_FASTLANE_FAILED_TO_RECEIVE_INFO @"Failed to receive FastLane ad info"
+#define CONSOLE_VIEW_FINAL_FASTLANE_SENDING_REGULAR_REQUEST @"Sending regular waterfall request without FastLane info"
 
 //OS version detector
 #define RP_SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)

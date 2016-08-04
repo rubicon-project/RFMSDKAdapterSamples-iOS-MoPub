@@ -38,11 +38,10 @@
 		B47E14681BCD7F180083FB0E /* SettingsKeyValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E14671BCD7F180083FB0E /* SettingsKeyValueCell.m */; };
 		B47E146B1BCD9EE40083FB0E /* SettingsLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E146A1BCD9EE40083FB0E /* SettingsLabelCell.m */; };
 		B4BF84DB1BCDCD980045CCB2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4BF84DA1BCDCD980045CCB2 /* CoreLocation.framework */; };
-		C9FC065F4493EA943030A1ED /* libPods-MoPub-RFM Sample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6EAB181901FF4DCE96372E /* libPods-MoPub-RFM Sample.a */; };
+		B4D4321E1D419343001EA17B /* TestCaseSettingsCheckboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D4321D1D419343001EA17B /* TestCaseSettingsCheckboxCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		14D404581A8740C30099330F /* MoPub-RFM Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MoPub-RFM Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14D4045C1A8740C30099330F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14D4045D1A8740C30099330F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14D4045F1A8740C30099330F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,10 +52,10 @@
 		14D4048B1A8743470099330F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		14D4048C1A8743470099330F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		14D404941A874AD30099330F /* TRPConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TRPConstants.h; sourceTree = "<group>"; };
-		3A6EAB181901FF4DCE96372E /* libPods-MoPub-RFM Sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoPub-RFM Sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		93BA0A6AF34F1369A6556F91 /* Pods-MoPub-RFM Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoPub-RFM Sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoPub-RFM Sample/Pods-MoPub-RFM Sample.debug.xcconfig"; sourceTree = "<group>"; };
-		B4365E671BB5E1B900548E14 /* AddTestCaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTestCaseViewController.h; sourceTree = "<group>"; };
-		B4365E681BB5E1B900548E14 /* AddTestCaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTestCaseViewController.m; sourceTree = "<group>"; };
+		86097C12D16E8180909014FC /* Pods-MoPub-RFM Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoPub-RFM Sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoPub-RFM Sample/Pods-MoPub-RFM Sample.release.xcconfig"; sourceTree = "<group>"; };
+		B40209F61C85255A00402326 /* MoPub-RFM Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MoPub-RFM Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4365E671BB5E1B900548E14 /* AddTestCaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AddTestCaseViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		B4365E681BB5E1B900548E14 /* AddTestCaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AddTestCaseViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B4365E6B1BB5E1F700548E14 /* AddTestCaseTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTestCaseTextFieldCell.h; sourceTree = "<group>"; };
 		B4365E6C1BB5E1F700548E14 /* AddTestCaseTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTestCaseTextFieldCell.m; sourceTree = "<group>"; };
 		B4365E6E1BB5E4B300548E14 /* AddTestCasePickerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTestCasePickerViewCell.h; sourceTree = "<group>"; };
@@ -103,7 +102,9 @@
 		B47E14691BCD9EE40083FB0E /* SettingsLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsLabelCell.h; sourceTree = "<group>"; };
 		B47E146A1BCD9EE40083FB0E /* SettingsLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsLabelCell.m; sourceTree = "<group>"; };
 		B4BF84DA1BCDCD980045CCB2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		E4E024BC3007FCEF12E37D0F /* Pods-MoPub-RFM Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoPub-RFM Sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoPub-RFM Sample/Pods-MoPub-RFM Sample.release.xcconfig"; sourceTree = "<group>"; };
+		B4D4321C1D419343001EA17B /* TestCaseSettingsCheckboxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TestCaseSettingsCheckboxCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		B4D4321D1D419343001EA17B /* TestCaseSettingsCheckboxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TestCaseSettingsCheckboxCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		D288954BBBEA04D7BC1A1E13 /* Pods-MoPub-RFM Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoPub-RFM Sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoPub-RFM Sample/Pods-MoPub-RFM Sample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +114,6 @@
 			files = (
 				B4BF84DB1BCDCD980045CCB2 /* CoreLocation.framework in Frameworks */,
 				B4365E931BBB4F1900548E14 /* libxml2.2.tbd in Frameworks */,
-				C9FC065F4493EA943030A1ED /* libPods-MoPub-RFM Sample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,18 +124,10 @@
 			isa = PBXGroup;
 			children = (
 				14D4045A1A8740C30099330F /* MoPub-RFM Sample */,
-				14D404591A8740C30099330F /* Products */,
 				6CF512275C9D3E90D81BB280 /* Frameworks */,
-				B897E68C518E610144816BB2 /* Pods */,
+				B40209F61C85255A00402326 /* MoPub-RFM Sample.app */,
+				5029767DEC3D870FD99195B2 /* Pods */,
 			);
-			sourceTree = "<group>";
-		};
-		14D404591A8740C30099330F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				14D404581A8740C30099330F /* MoPub-RFM Sample.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		14D4045A1A8740C30099330F /* MoPub-RFM Sample */ = {
@@ -197,12 +189,20 @@
 			path = Library;
 			sourceTree = "<group>";
 		};
+		5029767DEC3D870FD99195B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D288954BBBEA04D7BC1A1E13 /* Pods-MoPub-RFM Sample.debug.xcconfig */,
+				86097C12D16E8180909014FC /* Pods-MoPub-RFM Sample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6CF512275C9D3E90D81BB280 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				B4BF84DA1BCDCD980045CCB2 /* CoreLocation.framework */,
 				B4365E921BBB4F1900548E14 /* libxml2.2.tbd */,
-				3A6EAB181901FF4DCE96372E /* libPods-MoPub-RFM Sample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -236,6 +236,8 @@
 			children = (
 				B4365E7D1BB9E0C800548E14 /* TestCaseSettingsViewController.h */,
 				B4365E7E1BB9E0C800548E14 /* TestCaseSettingsViewController.m */,
+				B4D4321C1D419343001EA17B /* TestCaseSettingsCheckboxCell.h */,
+				B4D4321D1D419343001EA17B /* TestCaseSettingsCheckboxCell.m */,
 			);
 			name = TestCaseSettings;
 			sourceTree = "<group>";
@@ -339,15 +341,6 @@
 			name = AppSettings;
 			sourceTree = "<group>";
 		};
-		B897E68C518E610144816BB2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				93BA0A6AF34F1369A6556F91 /* Pods-MoPub-RFM Sample.debug.xcconfig */,
-				E4E024BC3007FCEF12E37D0F /* Pods-MoPub-RFM Sample.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -355,12 +348,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14D4047B1A8740C30099330F /* Build configuration list for PBXNativeTarget "MoPub-RFM Sample" */;
 			buildPhases = (
-				3E63F169BCBD90D41A63A4E8 /* 📦 Check Pods Manifest.lock */,
+				5718B18C54CE880A01F35439 /* 📦 Check Pods Manifest.lock */,
 				14D404541A8740C30099330F /* Sources */,
 				14D404551A8740C30099330F /* Frameworks */,
 				14D404561A8740C30099330F /* Resources */,
-				9A18B1F3BE36C9D6E307B8F6 /* 📦 Embed Pods Frameworks */,
-				90B3CF76E3926EE8219BDC86 /* 📦 Copy Pods Resources */,
+				E630968D77A62A218AF70BB0 /* 📦 Embed Pods Frameworks */,
+				F3CEB9BB95FCF7912F1684C9 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -368,7 +361,7 @@
 			);
 			name = "MoPub-RFM Sample";
 			productName = "MoPub-RFM Sample";
-			productReference = 14D404581A8740C30099330F /* MoPub-RFM Sample.app */;
+			productReference = B40209F61C85255A00402326 /* MoPub-RFM Sample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -377,6 +370,7 @@
 		14D404501A8740C30099330F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Rubicon Project";
 				TargetAttributes = {
@@ -394,7 +388,7 @@
 				Base,
 			);
 			mainGroup = 14D4044F1A8740C30099330F;
-			productRefGroup = 14D404591A8740C30099330F /* Products */;
+			productRefGroup = 14D4044F1A8740C30099330F;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -418,7 +412,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3E63F169BCBD90D41A63A4E8 /* 📦 Check Pods Manifest.lock */ = {
+		5718B18C54CE880A01F35439 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -433,22 +427,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		90B3CF76E3926EE8219BDC86 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoPub-RFM Sample/Pods-MoPub-RFM Sample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9A18B1F3BE36C9D6E307B8F6 /* 📦 Embed Pods Frameworks */ = {
+		E630968D77A62A218AF70BB0 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -461,6 +440,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoPub-RFM Sample/Pods-MoPub-RFM Sample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3CEB9BB95FCF7912F1684C9 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoPub-RFM Sample/Pods-MoPub-RFM Sample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -481,6 +475,7 @@
 				B442841C1BB0D4A900EC0241 /* MainTableViewCell.m in Sources */,
 				B4365E761BB627BD00548E14 /* AppSettingsMenuViewController.m in Sources */,
 				B47E14511BC889660083FB0E /* SettingsCheckboxTextFieldCell.m in Sources */,
+				B4D4321E1D419343001EA17B /* TestCaseSettingsCheckboxCell.m in Sources */,
 				B4365E691BB5E1B900548E14 /* AddTestCaseViewController.m in Sources */,
 				B4365E771BB627BD00548E14 /* AppSettingsMenuCell.m in Sources */,
 				B4365E701BB5E4B300548E14 /* AddTestCasePickerViewCell.m in Sources */,
@@ -539,7 +534,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -551,7 +546,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -582,12 +577,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -600,32 +596,135 @@
 		};
 		14D4047C1A8740C30099330F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93BA0A6AF34F1369A6556F91 /* Pods-MoPub-RFM Sample.debug.xcconfig */;
+			baseConfigurationReference = D288954BBBEA04D7BC1A1E13 /* Pods-MoPub-RFM Sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MoPub-RFM Sample/MoPub-RFM Sample-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = "MoPub-RFM Sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"ColorUtils\"",
+					"-l\"SVProgressHUD\"",
+					"-l\"iOS-Color-Picker\"",
+					"-l\"mopub-ios-sdk\"",
+					"-l\"xml2\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"EventKit\"",
+					"-framework",
+					"\"EventKitUI\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"StoreKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rubiconproject.MoPub-RFM-Sample-FastLane";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		14D4047D1A8740C30099330F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4E024BC3007FCEF12E37D0F /* Pods-MoPub-RFM Sample.release.xcconfig */;
+			baseConfigurationReference = 86097C12D16E8180909014FC /* Pods-MoPub-RFM Sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MoPub-RFM Sample/MoPub-RFM Sample-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = "MoPub-RFM Sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"ColorUtils\"",
+					"-l\"SVProgressHUD\"",
+					"-l\"iOS-Color-Picker\"",
+					"-l\"mopub-ios-sdk\"",
+					"-l\"xml2\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"EventKit\"",
+					"-framework",
+					"\"EventKitUI\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"StoreKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rubiconproject.MoPub-RFM-Sample-FastLane";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

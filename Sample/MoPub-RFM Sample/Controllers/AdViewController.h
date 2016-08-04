@@ -13,4 +13,6 @@
 
 @interface AdViewController : BaseViewController
 
+@property (nonatomic, strong) NSDictionary *testCaseInfo;
+
 @end

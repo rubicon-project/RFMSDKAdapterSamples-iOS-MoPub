@@ -10,6 +10,7 @@
 #import <CocoaLumberjack/DDASLLogger.h>
 #import <CocoaLumberjack/DDTTYLogger.h>
 #import "TRPConstants.h"
+#import <RFMAdSDK/RFMAdSDK.h>
 
 @interface AppDelegate ()
 
@@ -26,6 +27,7 @@
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
     [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor greenColor] backgroundColor:nil forFlag:DDLogFlagInfo];
+    [RFMAdSDK setLogLevel:kRFMSDKLogLevelDebug];
     
   return YES;
 }

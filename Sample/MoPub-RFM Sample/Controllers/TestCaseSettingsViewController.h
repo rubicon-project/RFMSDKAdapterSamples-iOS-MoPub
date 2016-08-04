@@ -12,6 +12,7 @@
 #define SettingsCellTextField @"TextFieldCell"
 #define SettingsCellCheckboxTextField @"CheckboxTextFieldCell"
 #define SettingsCellSwitch @"SwitchCell"
+#define TestCaseSettingsCellCheckbox @"CheckboxCell"
 
 @interface TestCaseSettingsViewController : BaseTableViewController
 

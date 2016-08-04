@@ -24,8 +24,11 @@ typedef NS_ENUM(NSInteger, TestCasesSections){
 };
 
 typedef NS_ENUM(NSInteger, PresetTestCasesRowMap){
-    PresetTestCaseBanner = 0,
-    PresetTestCaseInterstitial,
+    PresetTestCaseFastLaneBanner = 0,
+    PresetTestCaseFastLaneInterstitial,
+    PresetTestCaseStandardBanner,
+    PresetTestCaseStandardInterstitial,
+    PresetTestCaseRewardedVideoInterstitial,
     
     PresetTestCaseNumRows
 };
@@ -37,6 +40,7 @@ typedef NS_ENUM(NSInteger, PresetTestCasesRowMap){
 @property (nonatomic, strong) NSMutableDictionary *tempTestCaseDictionary;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) Settings *settings;
+@property (nonatomic, strong) AdViewController *adViewController;
 
 @end
 
@@ -102,6 +106,8 @@ typedef NS_ENUM(NSInteger, PresetTestCasesRowMap){
     // Init settings
     self.settings = [Settings sharedInstance];
     
+    self.adViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AdViewController"];
+    
     [self reloadTableData];
 }
 
@@ -162,7 +168,7 @@ typedef NS_ENUM(NSInteger, PresetTestCasesRowMap){
         cell.delegate = self;
         cell.testCaseNumber.text = [NSString stringWithFormat: @"%ld", (long)indexPath.row + 1];
         
-        NSInteger tableRowNum;
+        NSInteger tableRowNum = 0;
 
         if (indexPath.section == SectionPreset) {
             tableRowNum = indexPath.row;
@@ -220,9 +226,11 @@ typedef NS_ENUM(NSInteger, PresetTestCasesRowMap){
     NSDictionary *newSettings = @{ TEST_CASE_SELECTED_PLIST_KEY : [NSString stringWithFormat:@"%ld", tableRowNum] };
     [self.settings updateSampleSettings:newSettings];
     
+    
+    NSDictionary *testCase = [[NSDictionary alloc] initWithDictionary:[self.tempTestCaseDictionary valueForKey:[NSString stringWithFormat:@"%ld", (long)tableRowNum]]];
+    self.adViewController.testCaseInfo = testCase;
     // Go to ad view
-    AdViewController *adViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AdViewController"];
-    [self.navigationController pushViewController:adViewController animated:YES];
+    [self.navigationController pushViewController:self.adViewController animated:YES];
 }
 
 - (IBAction)addTestCase:(UIButton *)sender {

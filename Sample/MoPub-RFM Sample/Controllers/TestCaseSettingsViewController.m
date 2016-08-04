@@ -10,17 +10,19 @@
 #import "SettingsCheckboxTextFieldCell.h"
 #import "SettingsSwitchCell.h"
 #import "SettingsTextFieldCell.h"
+#import "TestCaseSettingsCheckboxCell.h"
 #import "MainViewController.h"
 #import "Settings.h"
 #import "TRPConstants.h"
 #import "RPDeviceInfo.h"
 
-@interface TestCaseSettingsViewController () <SettingsSwitchCellDelegate, SettingsTextFieldCellDelegate, SettingsCheckboxTextFieldCellDelegate> {
+@interface TestCaseSettingsViewController () <SettingsSwitchCellDelegate, SettingsTextFieldCellDelegate, SettingsCheckboxTextFieldCellDelegate, TestCaseSettingsCheckboxCellDelegate> {
     UITextField *_testAdIdTextField;
     UIButton *_widthCheckbox;
     UIButton *_heightCheckbox;
     UITextField *_widthTextField;
     UITextField *_heightTextField;
+    UIButton *_rewardedVideoCheckbox;
 }
 
 @property (nonatomic, strong) NSMutableDictionary *testCaseSettings;
@@ -39,6 +41,7 @@
 typedef NS_ENUM(NSInteger, TestCaseSettingSections) {
     SectionSize = 0,
     SectionTestSettings,
+    SectionAdOptions,
     
     TestCaseSettingsNumSections
 };
@@ -55,6 +58,12 @@ typedef NS_ENUM(NSInteger, TestSettingsSectionRows) {
     TestSettingsSectionRowTestAdId,
     
     TestSettingsSectionNumRows
+};
+
+typedef NS_ENUM(NSInteger, AdOptionsSectionRows) {
+    AdOptionsSectionRowRewardedVideo = 0,
+    
+    AdOptionsSectionNumRows
 };
 
 - (void)viewDidLoad {
@@ -79,14 +88,16 @@ typedef NS_ENUM(NSInteger, TestSettingsSectionRows) {
     
     if (!_sectionTitles) {
         _sectionTitles = @{ @(SectionSize):@"SIZE",
-                            @(SectionTestSettings):@"TEST SETTINGS"
+                            @(SectionTestSettings):@"TEST SETTINGS",
+                            @(SectionAdOptions):@"AD OPTIONS"
                             };
     }
     
     if (!_rowMap) {
         _rowMap = @{
                     @(SectionSize):@(SizeSectionNumRows),
-                    @(SectionTestSettings):@(TestSettingsSectionNumRows)
+                    @(SectionTestSettings):@(TestSettingsSectionNumRows),
+                    @(SectionAdOptions):@(AdOptionsSectionNumRows)
                     };
     }
     
@@ -96,7 +107,9 @@ typedef NS_ENUM(NSInteger, TestSettingsSectionRows) {
                                [NSIndexPath indexPathForRow:SizeSectionRowHeight inSection:SectionSize]:SettingsCellCheckboxTextField,
                                
                                [NSIndexPath indexPathForRow:TestSettingsSectionRowTestMode inSection:SectionTestSettings]:SettingsCellSwitch,
-                               [NSIndexPath indexPathForRow:TestSettingsSectionRowTestAdId inSection:SectionTestSettings]:SettingsCellTextField
+                               [NSIndexPath indexPathForRow:TestSettingsSectionRowTestAdId inSection:SectionTestSettings]:SettingsCellTextField,
+                               
+                               [NSIndexPath indexPathForRow:AdOptionsSectionRowRewardedVideo inSection:SectionAdOptions]:TestCaseSettingsCellCheckbox
                                };
     }
 }
@@ -309,6 +322,12 @@ typedef NS_ENUM(NSInteger, TestSettingsSectionRows) {
                     break;
             }
         }
+    } else if ([cellIdentifier isEqualToString:TestCaseSettingsCellCheckbox]) {
+        TestCaseSettingsCheckboxCell *cell = (TestCaseSettingsCheckboxCell *)aCell;
+        cell.delegate = self;
+        
+        cell.label.text = @"Rewarded video";
+        cell.checkbox.selected = [self.testCaseSettings[TEST_CASE_AD_IS_REWARDED_VIDEO_PLIST_KEY] boolValue];
     }
 }
 
@@ -417,6 +436,11 @@ typedef NS_ENUM(NSInteger, TestSettingsSectionRows) {
             self.testCaseSettings[TEST_CASE_AD_IS_FULLSCREEN_PLIST_KEY] = @NO;
         }
     }
+}
+
+-(void)testCaseCheckboxCellClicked:(TestCaseSettingsCheckboxCell *)cell {
+    cell.checkbox.selected = !cell.checkbox.selected;
+    self.testCaseSettings[TEST_CASE_AD_IS_REWARDED_VIDEO_PLIST_KEY] = [NSNumber numberWithBool:cell.checkbox.selected];
 }
 
 - (void)bannerWidthChanged:(UITextField *)textField{

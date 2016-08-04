@@ -12,12 +12,14 @@
 #import "RPDeviceInfo.h"
 #import <RFMAdSDK/RFMAdSDK.h>
 #import <MPAdView.h>
+#import "MPRewardedVideo.h"
+#import "MoPub.h"
 #import <MPInterstitialAdController.h>
 #import <CoreLocation/CoreLocation.h>
 
 @import CoreLocation;
 
-@interface AdViewController ()<MPAdViewDelegate, MPInterstitialAdControllerDelegate, CLLocationManagerDelegate>{
+@interface AdViewController ()<MPAdViewDelegate, MPInterstitialAdControllerDelegate, CLLocationManagerDelegate, RFMFastLaneDelegate, MPRewardedVideoDelegate> {
     NSNumber *_successCounter;
     NSNumber *_failureCounter;
     NSDate *_adRequestTime;
@@ -46,6 +48,7 @@
 @property (nonatomic, strong) NSNumber *bannerHeight;
 
 @property (nonatomic, assign) BOOL adIsBanner;
+@property (nonatomic, assign) BOOL adIsRewardedVideo;
 @property (nonatomic, assign) BOOL isTestMode;
 @property (nonatomic, strong) NSString *adKeywords;
 @property (nonatomic, strong) CLLocation *location;
@@ -53,7 +56,11 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 @property (nonatomic) MPAdView *adView;
-@property (nonatomic, strong) MPInterstitialAdController *interstitialAdView;
+@property (nonatomic, retain) MPInterstitialAdController *interstitialAdView;
+
+@property (nonatomic, strong) RFMAdRequest *fastlaneRequest;
+@property (nonatomic, assign) BOOL isFastlane;
+@property (nonatomic, assign, readonly) BOOL fetchOnlyVideoAds;
 
 - (IBAction)countersExpandButtonClicked:(UIButton *)sender;
 - (IBAction)logsExpandButtonClicked:(UIButton *)sender;
@@ -63,7 +70,9 @@
 
 @end
 
-@implementation AdViewController
+@implementation AdViewController {
+    NSString *_rewardedVideoAdUnitId;
+}
 
 #define SCROLL_VIEW_DEFAULT_HEIGHT 513
 #define SHADOW_LAYER_NAME @"shadow"
@@ -73,7 +82,6 @@
     [super viewDidLoad];
     [self initialize];
     [self setCountersText];
-    _requestsStarted = NO;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -138,6 +146,7 @@
     self.mopubAdUnitId = (NSString *)[testCaseSelected valueForKey:TEST_CASES_TEST_CASE_SITE_ID_PLIST_KEY];
     self.adIsBanner = ([[testCaseSelected valueForKey:TEST_CASES_TEST_CASE_AD_TYPE_PLIST_KEY] isEqual: @0]) ? YES : NO;
     self.isTestMode = [[testCaseSelected valueForKey:TEST_CASE_TEST_MODE_ENABLED_PLIST_KEY] boolValue];
+    self.adIsRewardedVideo = [[testCaseSelected valueForKey:TEST_CASE_AD_IS_REWARDED_VIDEO_PLIST_KEY] boolValue];
     
     if ([targetingKVs count]) {
         NSMutableString *keywords = [[NSMutableString alloc] init];
@@ -167,14 +176,35 @@
     
     self.pageLabel.text = (NSString *)[testCaseSelected valueForKey:TEST_CASES_TEST_CASE_NAME_PLIST_KEY];
     self.pageSubLabel.text = [NSString stringWithFormat:@"%@: %@", TEST_CASE_SETTINGS_MOPUB_SITE_ID_PREFIX, self.mopubAdUnitId];
+    [self.requestAdButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+    _requestsStarted = NO;
 }
 
 - (IBAction)backButtonClicked:(UIButton *)sender{
+    [self resetAdViewAndResetCounters:YES];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)requestAdButtonClicked:(UIButton *)sender{
     [self requestNewAd];
+}
+
+- (void)setTestCaseInfo:(NSDictionary *)testCaseInfo
+{
+    _testCaseInfo = testCaseInfo;
+    self.isFastlane = [_testCaseInfo[TEST_CASE_FASTLANE_ENABLED_PLIST_KEY] boolValue];
+    if(self.isFastlane) {
+        self.fastlaneRequest = [[RFMAdRequest alloc] initRequestWithServer:_testCaseInfo[TEST_CASE_SERVER_PLIST_KEY]
+                                                                  andAppId:_testCaseInfo[TEST_CASE_FASTLANE_RFM_APP_ID_PLIST_KEY]
+                                                                  andPubId:_testCaseInfo[TEST_CASE_FASTLANE_RFM_PUB_ID_PLIST_KEY]];
+    } else {
+        self.fastlaneRequest = nil;
+    }
+}
+
+- (BOOL)fetchOnlyVideoAds
+{
+    return [self.testCaseInfo[TEST_CASE_FETCH_ONLY_VIDEO_ADS_KEY] boolValue];
 }
 
 -(void)requestNewAd{
@@ -204,7 +234,7 @@
         }
         
         self.adView.adUnitId = self.mopubAdUnitId;
-        self.adView.testing = self.isTestMode;
+//        self.adView.testing = self.isTestMode;
         
         if (self.adKeywords) {
             self.adView.keywords = self.adKeywords;
@@ -214,9 +244,24 @@
             self.adView.location = self.location;
         }
         
-        [self.adView loadAd];
-        [self.adContainer addSubview:self.adView];
+        if(self.isFastlane) {
+            self.fastlaneRequest.fetchOnlyVideoAds = self.fetchOnlyVideoAds;
+            RFMFastLane *fastLane = [[RFMFastLane alloc] initWithSize:self.adView.frame.size delegate:self];
+            [fastLane preFetchAdWithParams:self.fastlaneRequest];
+        } else {
+            [self.adView loadAd];
+            [self.adContainer addSubview:self.adView];
+        }
+    } else if (self.adIsRewardedVideo) {
+        [self.requestAdButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+        
+        [[MoPub sharedInstance] initializeRewardedVideoWithGlobalMediationSettings:nil delegate:(id)self];
+        _rewardedVideoAdUnitId = self.mopubAdUnitId;
+        // Precache rewarded video
+        [MPRewardedVideo loadRewardedVideoAdWithAdUnitID:_rewardedVideoAdUnitId withMediationSettings:nil];
     } else {
+        [self.requestAdButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+        
         // Interstitial request
         if (!_interstitialAdView) {
             self.interstitialAdView = [MPInterstitialAdController interstitialAdControllerForAdUnitId:self.mopubAdUnitId];
@@ -234,7 +279,14 @@
             self.interstitialAdView.location = self.location;
         }
         
-        [self.interstitialAdView loadAd];
+        if(self.isFastlane) {
+            self.fastlaneRequest.rfmAdType = RFM_ADTYPE_INTERSTITIAL;
+            self.fastlaneRequest.fetchOnlyVideoAds = self.fetchOnlyVideoAds;
+            RFMFastLane *fastLane = [[RFMFastLane alloc] initWithSize:self.interstitialAdView.view.frame.size delegate:self];
+            [fastLane preFetchAdWithParams:self.fastlaneRequest];
+        } else {
+            [self.interstitialAdView loadAd];
+        }
     }
     
     [self appendTextToConsoleView:[NSString stringWithFormat:@"Requesting Ad Unit: %@", self.mopubAdUnitId]];
@@ -352,18 +404,29 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:SegueAdViewToSettings]) {
-        if (self.adView) {
-            self.adView = nil;
-            for (UIView *subview in [self.adContainer subviews]) {
-                [subview removeFromSuperview];
-            }
-            
-            if (_requestsStarted) {
-                [self.requestAdButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
-                [self.adView stopAutomaticallyRefreshingContents];
-                _requestsStarted = NO;
-            }
+        [self resetAdViewAndResetCounters:NO];
+    }
+}
+
+-(void)resetAdViewAndResetCounters:(BOOL)resetCounters {
+    if (self.adView) {
+        self.adView = nil;
+        for (UIView *subview in [self.adContainer subviews]) {
+            [subview removeFromSuperview];
         }
+        
+        if (_requestsStarted) {
+            [self.adView stopAutomaticallyRefreshingContents];
+            _requestsStarted = NO;
+        }
+    }
+    
+    // Clear logs when leaving ad preview
+    if (resetCounters) {
+        _successCounter = 0;
+        _failureCounter = 0;
+        [self setCountersText];
+        self.logsTextArea.text = @"";
     }
 }
 
@@ -475,6 +538,122 @@
 
 - (void)interstitialDidReceiveTapEvent:(MPInterstitialAdController *)interstitial{
     [self appendTextToConsoleView:CONSOLE_VIEW_INTERSTITIAL_DID_RECEIVE_TAP_EVENT];
+}
+
+#pragma mark - MoPub Rewarded Video
+
+- (void)rewardedVideoAdDidLoadForAdUnitID:(NSString *)adUnitID {
+    [self appendTextToConsoleView:CONSOLE_VIEW_REWARDED_VIDEO_DID_LOAD];
+    
+    if ([MPRewardedVideo hasAdAvailableForAdUnitID:_rewardedVideoAdUnitId]) {
+        [MPRewardedVideo presentRewardedVideoAdForAdUnitID:_rewardedVideoAdUnitId fromViewController:self];
+    }
+    
+    _successCounter = [NSNumber numberWithInt:[_successCounter intValue] + 1];
+    [self setCountersText];
+}
+
+- (void)rewardedVideoAdDidFailToLoadForAdUnitID:(NSString*)adUnitID error:(NSError *)error {
+    [self appendTextToConsoleView:CONSOLE_VIEW_REWARDED_VIDEO_DID_FAIL_TO_LOAD];
+    
+    _failureCounter = [NSNumber numberWithInt:[_failureCounter intValue] + 1];
+    [self setCountersText];
+}
+
+- (void)rewardedVideoAdDidFailToPlayForAdUnitID:(NSString *)adUnitID error:(NSError *)error {
+    [self appendTextToConsoleView:CONSOLE_VIEW_REWARDED_VIDEO_DID_FAIL_TO_PLAY];
+}
+
+- (void)rewardedVideoAdWillAppearForAdUnitID:(NSString *)adUnitID {
+    [self appendTextToConsoleView:CONSOLE_VIEW_REWARDED_VIDEO_WILL_APPEAR];
+}
+
+- (void)rewardedVideoAdDidAppearForAdUnitID:(NSString *)adUnitID {
+    [self appendTextToConsoleView:CONSOLE_VIEW_REWARDED_VIDEO_DID_APPEAR];
+}
+
+- (void)rewardedVideoAdWillDisappearForAdUnitID:(NSString *)adUnitID {
+    [self appendTextToConsoleView:CONSOLE_VIEW_REWARDED_VIDEO_WILL_DISAPPEAR];
+}
+
+- (void)rewardedVideoAdDidDisappearForAdUnitID:(NSString *)adUnitID {
+    [self appendTextToConsoleView:CONSOLE_VIEW_REWARDED_VIDEO_DID_DISAPPEAR];
+}
+
+- (void)rewardedVideoAdDidExpireForAdUnitID:(NSString *)adUnitID {
+    [self appendTextToConsoleView:CONSOLE_VIEW_REWARDED_VIDEO_DID_EXPIRE];
+}
+
+- (void)rewardedVideoAdDidReceiveTapEventForAdUnitID:(NSString *)adUnitID {
+    [self appendTextToConsoleView:CONSOLE_VIEW_REWARDED_VIDEO_DID_RECEIVE_TAP_EVENT];
+}
+
+- (void)rewardedVideoAdShouldRewardForAdUnitID:(NSString *)adUnitID reward:(MPRewardedVideoReward *)reward {
+    [self appendTextToConsoleView:CONSOLE_VIEW_SHOULD_REWARD_USER];
+}
+
+- (void)rewardedVideoAdWillLeaveApplicationForAdUnitID:(NSString *)adUnitID {}
+
+#pragma mark - FastLane
+
+- (void)didReceiveFastLaneAdInfo:(NSDictionary *)adInfo
+{
+    if (self.adIsBanner) {
+        if (self.adKeywords) {
+            [self appendTextToConsoleView:CONSOLE_VIEW_FINAL_FASTLANE_CUSTOM_TARGETING];
+            self.adView.keywords = self.adKeywords;
+        } else {
+            if ([adInfo count]) {
+                NSMutableString *keywords = [[NSMutableString alloc] init];
+                
+                for (NSString *key in adInfo){
+                    [keywords appendString:[NSString stringWithFormat:@"%@:%@,", key, adInfo[key]]];
+                }
+                
+                self.adView.keywords = [keywords substringToIndex:[keywords length] - 1];
+            }
+        }
+        
+        [self appendTextToConsoleView:[NSString stringWithFormat:@"%@: %@", CONSOLE_VIEW_FINAL_FASTLANE_INFO, self.adView.keywords]];
+        NSLog(@"%@", adInfo);
+        [self.adView loadAd];
+        [self.adContainer addSubview:self.adView];
+    } else {
+        if (self.adKeywords) {
+            [self appendTextToConsoleView:CONSOLE_VIEW_FINAL_FASTLANE_CUSTOM_TARGETING];
+            self.interstitialAdView.keywords = self.adKeywords;
+        } else {
+            if ([adInfo count]) {
+                NSMutableString *keywords = [[NSMutableString alloc] init];
+                
+                for (NSString *key in adInfo){
+                    [keywords appendString:[NSString stringWithFormat:@"%@:%@,", key, adInfo[key]]];
+                }
+                
+                self.interstitialAdView.keywords = [keywords substringToIndex:[keywords length] - 1];
+            }
+        }
+        
+        [self appendTextToConsoleView:[NSString stringWithFormat:@"%@: %@", CONSOLE_VIEW_FINAL_FASTLANE_INFO, self.interstitialAdView.keywords]];
+        
+        [self.interstitialAdView loadAd];
+    }
+}
+
+- (void)didFailToReceiveFastLaneAdWithReason:(NSString *)errorReason
+{
+   [self appendTextToConsoleView:[NSString stringWithFormat:@"%@: %@", CONSOLE_VIEW_FINAL_FASTLANE_FAILED_TO_RECEIVE_INFO, errorReason]];
+    
+    _failureCounter = [NSNumber numberWithInt:[_failureCounter intValue] + 1];
+    [self setCountersText];
+    
+    [self appendTextToConsoleView:CONSOLE_VIEW_FINAL_FASTLANE_SENDING_REGULAR_REQUEST];
+    if (self.adIsBanner) {
+        [self.adView loadAd];
+        [self.adContainer addSubview:self.adView];
+    } else {
+        [self.interstitialAdView loadAd];
+    }
 }
 
 @end

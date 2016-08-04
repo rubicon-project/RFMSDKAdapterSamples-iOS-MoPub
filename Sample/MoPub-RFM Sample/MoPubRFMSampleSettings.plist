@@ -23,25 +23,39 @@
 	<dict>
 		<key>0</key>
 		<dict>
-			<key>testCaseName</key>
-			<string>Banner</string>
-			<key>testCaseMopubSiteId</key>
-			<string>7782a299fe11423a866bd18c18976b02</string>
-			<key>testCaseAdType</key>
-			<integer>0</integer>
-			<key>testCaseAdWidth</key>
-			<integer>320</integer>
-			<key>testCaseAdHeight</key>
-			<integer>50</integer>
-			<key>testCaseTestModeEnabled</key>
+			<key>testCaseFetchOnlyVideoAds</key>
+			<false/>
+			<key>testCaseAdIsFullscreen</key>
 			<false/>
 			<key>testCaseTestAdId</key>
 			<integer>0</integer>
-			<key>testCaseAdIsFullscreen</key>
+			<key>testCaseTestModeEnabled</key>
+			<true/>
+			<key>testCaseAdHeight</key>
+			<integer>50</integer>
+			<key>testCaseAdWidth</key>
+			<integer>320</integer>
+			<key>testCaseAdType</key>
+			<integer>0</integer>
+			<key>testCaseName</key>
+			<string>FastLane Banner</string>
+			<key>testCaseMopubSiteId</key>
+			<string>ab4101c815864e50af90facae8a6729a</string>
+			<key>testCaseRfmAppId</key>
+			<string>AE45DF20EF6E0133146922000B3510F7</string>
+			<key>testCaseRfmPubId</key>
+			<string>111008</string>
+			<key>testCaseServer</key>
+			<string>http://mrp.rubiconproject.com/</string>
+			<key>testCaseFastLaneEnabled</key>
+			<true/>
+			<key>testCaseAdIsRewardedVideo</key>
 			<false/>
 		</dict>
 		<key>1</key>
 		<dict>
+			<key>testCaseFetchOnlyVideoAds</key>
+			<false/>
 			<key>testCaseAdIsFullscreen</key>
 			<true/>
 			<key>testCaseTestAdId</key>
@@ -55,9 +69,112 @@
 			<key>testCaseAdType</key>
 			<integer>1</integer>
 			<key>testCaseName</key>
-			<string>Interstitial</string>
+			<string>FastLane Interstitial</string>
 			<key>testCaseMopubSiteId</key>
-			<string>91cdae87cd664fc2a9c2cf03ec447e6c</string>
+			<string>39537d5daed242238ef5a2d2597242b5</string>
+			<key>testCaseRfmAppId</key>
+			<string>F2B0ABD0B7CF0133108722000B3510F7</string>
+			<key>testCaseRfmPubId</key>
+			<string>111315</string>
+			<key>testCaseServer</key>
+			<string>http://mrp.rubiconproject.com/</string>
+			<key>testCaseFastLaneEnabled</key>
+			<true/>
+			<key>testCaseAdIsRewardedVideo</key>
+			<false/>
+		</dict>
+		<key>2</key>
+		<dict>
+			<key>testCaseFetchOnlyVideoAds</key>
+			<false/>
+			<key>testCaseAdIsFullscreen</key>
+			<false/>
+			<key>testCaseTestAdId</key>
+			<integer>0</integer>
+			<key>testCaseTestModeEnabled</key>
+			<false/>
+			<key>testCaseAdHeight</key>
+			<integer>50</integer>
+			<key>testCaseAdWidth</key>
+			<integer>320</integer>
+			<key>testCaseAdType</key>
+			<integer>0</integer>
+			<key>testCaseName</key>
+			<string>Standard Banner</string>
+			<key>testCaseMopubSiteId</key>
+			<string>496e8be281af4626925cc933b4d63bb1</string>
+			<key>testCaseRfmAppId</key>
+			<string>01573C50497A0130031B123139244773</string>
+			<key>testCaseRfmPubId</key>
+			<string>111315</string>
+			<key>testCaseServer</key>
+			<string>http://mrp.rubiconproject.com/</string>
+			<key>testCaseFastLaneEnabled</key>
+			<false/>
+			<key>testCaseAdIsRewardedVideo</key>
+			<false/>
+		</dict>
+		<key>3</key>
+		<dict>
+			<key>testCaseFetchOnlyVideoAds</key>
+			<false/>
+			<key>testCaseAdIsFullscreen</key>
+			<false/>
+			<key>testCaseTestAdId</key>
+			<integer>0</integer>
+			<key>testCaseTestModeEnabled</key>
+			<false/>
+			<key>testCaseAdHeight</key>
+			<integer>0</integer>
+			<key>testCaseAdWidth</key>
+			<integer>0</integer>
+			<key>testCaseAdType</key>
+			<integer>1</integer>
+			<key>testCaseName</key>
+			<string>Standard Interstitial</string>
+			<key>testCaseMopubSiteId</key>
+			<string>7328bcb2d01c450ea60ec6db3f2d3180</string>
+			<key>testCaseRfmAppId</key>
+			<string>01573C50497A0130031B123139244773</string>
+			<key>testCaseRfmPubId</key>
+			<string>111315</string>
+			<key>testCaseServer</key>
+			<string>http://mrp.rubiconproject.com/</string>
+			<key>testCaseFastLaneEnabled</key>
+			<false/>
+			<key>testCaseAdIsRewardedVideo</key>
+			<false/>
+		</dict>
+		<key>4</key>
+		<dict>
+			<key>testCaseFetchOnlyVideoAds</key>
+			<true/>
+			<key>testCaseAdIsFullscreen</key>
+			<true/>
+			<key>testCaseTestAdId</key>
+			<integer>0</integer>
+			<key>testCaseTestModeEnabled</key>
+			<false/>
+			<key>testCaseAdHeight</key>
+			<integer>0</integer>
+			<key>testCaseAdWidth</key>
+			<integer>0</integer>
+			<key>testCaseAdType</key>
+			<integer>1</integer>
+			<key>testCaseName</key>
+			<string>Rewarded Video Interstitial</string>
+			<key>testCaseMopubSiteId</key>
+			<string>a84cd01011524366af487d255fb4a082</string>
+			<key>testCaseRfmAppId</key>
+			<string></string>
+			<key>testCaseRfmPubId</key>
+			<string></string>
+			<key>testCaseServer</key>
+			<string></string>
+			<key>testCaseFastLaneEnabled</key>
+			<false/>
+			<key>testCaseAdIsRewardedVideo</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
