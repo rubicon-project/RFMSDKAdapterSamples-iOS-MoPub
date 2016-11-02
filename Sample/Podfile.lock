@@ -9,9 +9,9 @@ PODS:
     - CocoaLumberjack/Default
   - ColorUtils (1.1.3)
   - iOS-Color-Picker (1.1.4)
-  - mopub-ios-sdk (4.7.0):
-    - mopub-ios-sdk/MoPubSDK (= 4.7.0)
-  - mopub-ios-sdk/MoPubSDK (4.7.0)
+  - mopub-ios-sdk (4.10.1):
+    - mopub-ios-sdk/MoPubSDK (= 4.10.1)
+  - mopub-ios-sdk/MoPubSDK (4.10.1)
   - OHHTTPStubs (4.8.0):
     - OHHTTPStubs/Default (= 4.8.0)
   - OHHTTPStubs/Core (4.8.0)
@@ -25,32 +25,32 @@ PODS:
   - OHHTTPStubs/NSURLSession (4.8.0):
     - OHHTTPStubs/Core
   - OHHTTPStubs/OHPathHelpers (4.8.0)
-  - RFMAdSDK (5.0.0)
-  - RFMSDKAdapter-iOS-MoPub (2.1.0):
+  - RFMAdSDK (6.0.0)
+  - RFMSDKAdapter-iOS-MoPub (3.0.0):
     - mopub-ios-sdk
     - RFMAdSDK
   - SVProgressHUD (1.1.3)
 
 DEPENDENCIES:
-  - CocoaLumberjack
+  - CocoaLumberjack (~> 2.3.0)
   - ColorUtils (~> 1.1)
   - iOS-Color-Picker (~> 1.1)
   - mopub-ios-sdk
   - OHHTTPStubs (~> 4.8.0)
-  - RFMAdSDK (~> 5.0.0)
-  - RFMSDKAdapter-iOS-MoPub (~> 2.1.0)
+  - RFMAdSDK (~> 6.0.0)
+  - RFMSDKAdapter-iOS-MoPub (~> 3.0.0)
   - SVProgressHUD (~> 1.1)
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
   ColorUtils: f99c501f9caf5374b35480a281168565a24bdb6d
   iOS-Color-Picker: 0eebf395527785e1ff2180c35b69f6d369051555
-  mopub-ios-sdk: e46b277cdb77b1745567b419742f77fed6865262
+  mopub-ios-sdk: 54b3b9cb41118202eb69653b0ac1d011c9e2bce1
   OHHTTPStubs: b393565822317305b87a1440d4c7aff131679f66
-  RFMAdSDK: 2ee7ee542c2edebb73f43a0cfeb90afcc5091528
-  RFMSDKAdapter-iOS-MoPub: 7959137c9e44d133a37720e6fe7b54de5fba3009
+  RFMAdSDK: 1c7572c188c46a335332d27046c7377c0d54e6f4
+  RFMSDKAdapter-iOS-MoPub: fa27ee827e90536751b44b1fe3466dd14638af87
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
 
-PODFILE CHECKSUM: 2bf5033a560b0a1d861ffb880deba7a01ec8e44f
+PODFILE CHECKSUM: 31b9c8a4b847153d1d85071a2c76b5c8e86aa1ab
 
 COCOAPODS: 1.0.0

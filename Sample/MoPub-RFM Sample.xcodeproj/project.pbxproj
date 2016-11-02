@@ -13,6 +13,7 @@
 		14D404691A8740C30099330F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14D404681A8740C30099330F /* Images.xcassets */; };
 		14D4046C1A8740C30099330F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D4046A1A8740C30099330F /* LaunchScreen.xib */; };
 		14D4048D1A8743470099330F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D4048C1A8743470099330F /* MainViewController.m */; };
+		33046AB78885CE58D4DE02A3 /* libPods-MoPub-RFM Sample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DFC805475F9CF869870CC2 /* libPods-MoPub-RFM Sample.a */; };
 		B4365E691BB5E1B900548E14 /* AddTestCaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4365E681BB5E1B900548E14 /* AddTestCaseViewController.m */; };
 		B4365E6D1BB5E1F700548E14 /* AddTestCaseTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4365E6C1BB5E1F700548E14 /* AddTestCaseTextFieldCell.m */; };
 		B4365E701BB5E4B300548E14 /* AddTestCasePickerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4365E6F1BB5E4B300548E14 /* AddTestCasePickerViewCell.m */; };
@@ -38,6 +39,7 @@
 		B47E14681BCD7F180083FB0E /* SettingsKeyValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E14671BCD7F180083FB0E /* SettingsKeyValueCell.m */; };
 		B47E146B1BCD9EE40083FB0E /* SettingsLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E146A1BCD9EE40083FB0E /* SettingsLabelCell.m */; };
 		B4BF84DB1BCDCD980045CCB2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4BF84DA1BCDCD980045CCB2 /* CoreLocation.framework */; };
+		B4D1CC881DBFC7950021BC9C /* NativeNewsFeedAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D1CC871DBFC7950021BC9C /* NativeNewsFeedAdView.m */; };
 		B4D4321E1D419343001EA17B /* TestCaseSettingsCheckboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D4321D1D419343001EA17B /* TestCaseSettingsCheckboxCell.m */; };
 /* End PBXBuildFile section */
 
@@ -102,8 +104,11 @@
 		B47E14691BCD9EE40083FB0E /* SettingsLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsLabelCell.h; sourceTree = "<group>"; };
 		B47E146A1BCD9EE40083FB0E /* SettingsLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsLabelCell.m; sourceTree = "<group>"; };
 		B4BF84DA1BCDCD980045CCB2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B4D1CC861DBFC7950021BC9C /* NativeNewsFeedAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeNewsFeedAdView.h; sourceTree = "<group>"; };
+		B4D1CC871DBFC7950021BC9C /* NativeNewsFeedAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeNewsFeedAdView.m; sourceTree = "<group>"; };
 		B4D4321C1D419343001EA17B /* TestCaseSettingsCheckboxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TestCaseSettingsCheckboxCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B4D4321D1D419343001EA17B /* TestCaseSettingsCheckboxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TestCaseSettingsCheckboxCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		C9DFC805475F9CF869870CC2 /* libPods-MoPub-RFM Sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoPub-RFM Sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D288954BBBEA04D7BC1A1E13 /* Pods-MoPub-RFM Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoPub-RFM Sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoPub-RFM Sample/Pods-MoPub-RFM Sample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +119,7 @@
 			files = (
 				B4BF84DB1BCDCD980045CCB2 /* CoreLocation.framework in Frameworks */,
 				B4365E931BBB4F1900548E14 /* libxml2.2.tbd in Frameworks */,
+				33046AB78885CE58D4DE02A3 /* libPods-MoPub-RFM Sample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +209,7 @@
 			children = (
 				B4BF84DA1BCDCD980045CCB2 /* CoreLocation.framework */,
 				B4365E921BBB4F1900548E14 /* libxml2.2.tbd */,
+				C9DFC805475F9CF869870CC2 /* libPods-MoPub-RFM Sample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -278,6 +285,8 @@
 			children = (
 				B442843C1BB356D700EC0241 /* AdViewController.h */,
 				B442843D1BB356D700EC0241 /* AdViewController.m */,
+				B4D1CC861DBFC7950021BC9C /* NativeNewsFeedAdView.h */,
+				B4D1CC871DBFC7950021BC9C /* NativeNewsFeedAdView.m */,
 			);
 			name = AdPreview;
 			sourceTree = "<group>";
@@ -481,6 +490,7 @@
 				B4365E701BB5E4B300548E14 /* AddTestCasePickerViewCell.m in Sources */,
 				B4365E7F1BB9E0C800548E14 /* TestCaseSettingsViewController.m in Sources */,
 				14D4045E1A8740C30099330F /* main.m in Sources */,
+				B4D1CC881DBFC7950021BC9C /* NativeNewsFeedAdView.m in Sources */,
 				B47E146B1BCD9EE40083FB0E /* SettingsLabelCell.m in Sources */,
 				B47E14621BCD7DED0083FB0E /* AppSettingsViewController.m in Sources */,
 				B47E14681BCD7F180083FB0E /* SettingsKeyValueCell.m in Sources */,

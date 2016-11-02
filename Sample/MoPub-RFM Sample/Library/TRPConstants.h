@@ -18,7 +18,7 @@
 #define COLOR_TRP_OFF_WHITE @"FAFAFA"
 
 //Add Test Case
-#define AD_TYPE_LIST_UI_TEXT @{ @"1" : @"Banner", @"2" : @"Interstitial"}
+#define AD_TYPE_LIST_UI_TEXT @{ @"1" : @"Banner", @"2" : @"Interstitial", @"3" : @"Native"}
 #define TEST_CASE_NAME_PLACEHOLDER @"Test Case Name"
 #define MOPUB_SITE_ID_PLACEHOLDER @"MoPub Ad Unit ID"
 #define TEST_CASES_PLIST_KEY @"testCases"
@@ -89,6 +89,13 @@
 #define CONSOLE_VIEW_FINAL_FASTLANE_CUSTOM_TARGETING @"FastLane: Using custom targeting from app settings instead of response"
 #define CONSOLE_VIEW_FINAL_FASTLANE_FAILED_TO_RECEIVE_INFO @"Failed to receive FastLane ad info"
 #define CONSOLE_VIEW_FINAL_FASTLANE_SENDING_REGULAR_REQUEST @"Sending regular waterfall request without FastLane info"
+
+//Native console text
+#define CONSOLE_VIEW_NATIVE_LOADED_AD @"Successfully loaded native ad"
+#define CONSOLE_VIEW_NATIVE_FAILED_TO_LOAD_AD @"Failed to load native ad"
+#define CONSOLE_VIEW_NATIVE_WILL_PRESENT_MODAL @"Will present modal for native ad"
+#define CONSOLE_VIEW_NATIVE_DID_DISMISS_MODAL @"Did dismiss modal for native ad"
+#define CONSOLE_VIEW_NATIVE_WILL_LEAVE_APPLICATION @"Will leave application from native ad"
 
 //OS version detector
 #define RP_SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)

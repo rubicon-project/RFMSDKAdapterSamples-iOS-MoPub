@@ -7,19 +7,24 @@
 //
 
 #import "AdViewController.h"
+#import "NativeNewsFeedAdView.h"
 #import "TRPConstants.h"
 #import "Settings.h"
 #import "RPDeviceInfo.h"
 #import <RFMAdSDK/RFMAdSDK.h>
+#import "MPNativeAdRendererSettings.h"
 #import <MPAdView.h>
 #import "MPRewardedVideo.h"
+#import "MPNativeAd.h"
+#import "MPNativeAdRendering.h"
 #import "MoPub.h"
+#import "RFMMoPubNativeAdRenderer.h"
 #import <MPInterstitialAdController.h>
 #import <CoreLocation/CoreLocation.h>
 
 @import CoreLocation;
 
-@interface AdViewController ()<MPAdViewDelegate, MPInterstitialAdControllerDelegate, CLLocationManagerDelegate, RFMFastLaneDelegate, MPRewardedVideoDelegate> {
+@interface AdViewController ()<MPAdViewDelegate, MPInterstitialAdControllerDelegate, CLLocationManagerDelegate, RFMFastLaneDelegate, MPRewardedVideoDelegate, MPNativeAdDelegate> {
     NSNumber *_successCounter;
     NSNumber *_failureCounter;
     NSDate *_adRequestTime;
@@ -44,10 +49,12 @@
 @property (weak, nonatomic) IBOutlet UIView *countersView;
 
 @property (nonatomic, strong) NSString *mopubAdUnitId;
-@property (nonatomic, strong) NSNumber *bannerWidth;
-@property (nonatomic, strong) NSNumber *bannerHeight;
+@property (nonatomic, strong) NSNumber *adWidth;
+@property (nonatomic, strong) NSNumber *adHeight;
 
 @property (nonatomic, assign) BOOL adIsBanner;
+@property (nonatomic, assign) BOOL adIsInterstitial;
+@property (nonatomic, assign) BOOL adIsNative;
 @property (nonatomic, assign) BOOL adIsRewardedVideo;
 @property (nonatomic, assign) BOOL isTestMode;
 @property (nonatomic, strong) NSString *adKeywords;
@@ -56,7 +63,9 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 @property (nonatomic) MPAdView *adView;
+@property (nonatomic) MPNativeAd *nativeAd;
 @property (nonatomic, retain) MPInterstitialAdController *interstitialAdView;
+@property (nonatomic, strong) NativeNewsFeedAdView *nativeAdView;
 
 @property (nonatomic, strong) RFMAdRequest *fastlaneRequest;
 @property (nonatomic, assign) BOOL isFastlane;
@@ -93,7 +102,9 @@
     [super viewDidAppear:animated];
     
     if (self.adIsBanner) {
-        [self configureViewForPlacementWidth:([self.bannerWidth integerValue] != 0 ? [self.bannerWidth integerValue] : 320) height:[self.bannerHeight integerValue] != 0 ? [self.bannerHeight integerValue] : 50];
+        [self configureViewForPlacementWidth:([self.adWidth integerValue] != 0 ? [self.adWidth integerValue] : 320) height:[self.adHeight integerValue] != 0 ? [self.adHeight integerValue] : 50];
+    } else if (self.adIsNative) {
+        [self configureViewForPlacementWidth:([self.adWidth integerValue] != 0 ? [self.adWidth integerValue] : 300) height:[self.adHeight integerValue] != 0 ? [self.adHeight integerValue] : 150];
     } else {
         [self configureViewForPlacementWidth:320 height:50];
     }
@@ -145,6 +156,8 @@
     
     self.mopubAdUnitId = (NSString *)[testCaseSelected valueForKey:TEST_CASES_TEST_CASE_SITE_ID_PLIST_KEY];
     self.adIsBanner = ([[testCaseSelected valueForKey:TEST_CASES_TEST_CASE_AD_TYPE_PLIST_KEY] isEqual: @0]) ? YES : NO;
+    self.adIsInterstitial = ([[testCaseSelected valueForKey:TEST_CASES_TEST_CASE_AD_TYPE_PLIST_KEY] isEqual: @1]) ? YES : NO;
+    self.adIsNative = ([[testCaseSelected valueForKey:TEST_CASES_TEST_CASE_AD_TYPE_PLIST_KEY] isEqual: @2]) ? YES : NO;
     self.isTestMode = [[testCaseSelected valueForKey:TEST_CASE_TEST_MODE_ENABLED_PLIST_KEY] boolValue];
     self.adIsRewardedVideo = [[testCaseSelected valueForKey:TEST_CASE_AD_IS_REWARDED_VIDEO_PLIST_KEY] boolValue];
     
@@ -171,8 +184,8 @@
         self.location = [[CLLocation alloc] initWithLatitude:lat longitude:lon];
     }
     
-    self.bannerWidth = [testCaseSelected valueForKey:TEST_CASE_AD_WIDTH_PLIST_KEY];
-    self.bannerHeight = [testCaseSelected valueForKey:TEST_CASE_AD_HEIGHT_PLIST_KEY];
+    self.adWidth = [testCaseSelected valueForKey:TEST_CASE_AD_WIDTH_PLIST_KEY];
+    self.adHeight = [testCaseSelected valueForKey:TEST_CASE_AD_HEIGHT_PLIST_KEY];
     
     self.pageLabel.text = (NSString *)[testCaseSelected valueForKey:TEST_CASES_TEST_CASE_NAME_PLIST_KEY];
     self.pageSubLabel.text = [NSString stringWithFormat:@"%@: %@", TEST_CASE_SETTINGS_MOPUB_SITE_ID_PREFIX, self.mopubAdUnitId];
@@ -244,7 +257,7 @@
             self.adView.location = self.location;
         }
         
-        if(self.isFastlane) {
+        if (self.isFastlane) {
             self.fastlaneRequest.fetchOnlyVideoAds = self.fetchOnlyVideoAds;
             RFMFastLane *fastLane = [[RFMFastLane alloc] initWithSize:self.adView.frame.size delegate:self];
             [fastLane preFetchAdWithParams:self.fastlaneRequest];
@@ -259,6 +272,46 @@
         _rewardedVideoAdUnitId = self.mopubAdUnitId;
         // Precache rewarded video
         [MPRewardedVideo loadRewardedVideoAdWithAdUnitID:_rewardedVideoAdUnitId withMediationSettings:nil];
+    } else if (self.adIsNative) {
+        [self.requestAdButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+        self.nativeAdView = [[NativeNewsFeedAdView alloc] init];
+        
+        MPStaticNativeAdRendererSettings *nativeAdSettings = [[MPStaticNativeAdRendererSettings alloc] init];
+        nativeAdSettings.renderingViewClass = [self.nativeAdView class];
+        MPNativeAdRendererConfiguration *config = [RFMMoPubNativeAdRenderer rendererConfigurationWithRendererSettings:nativeAdSettings];
+        MPNativeAdRequest *nativeAdRequest = [MPNativeAdRequest requestWithAdUnitIdentifier:self.mopubAdUnitId rendererConfigurations:@[config]];
+        MPNativeAdRequestTargeting *targeting = [MPNativeAdRequestTargeting targeting];
+        
+        if (self.adKeywords) {
+            targeting.keywords = self.adKeywords;
+        }
+        
+        if (self.location) {
+            targeting.location = self.location;
+        }
+        
+        if (self.adKeywords || self.location) {
+            nativeAdRequest.targeting = targeting;
+        }
+        
+        [nativeAdRequest startWithCompletionHandler:^(MPNativeAdRequest *request, MPNativeAd *response, NSError *error) {
+            if (error) {
+                [self appendTextToConsoleView:CONSOLE_VIEW_NATIVE_FAILED_TO_LOAD_AD];
+                
+                _failureCounter = [NSNumber numberWithInt:[_failureCounter intValue] + 1];
+                [self setCountersText];
+            } else {
+                self.nativeAd = response;
+                self.nativeAd.delegate = self;
+                UIView *adView = [self.nativeAd retrieveAdViewWithError:nil];
+                adView.frame = self.adContainer.bounds;
+                [self.adContainer addSubview:adView];
+                
+                [self appendTextToConsoleView:CONSOLE_VIEW_NATIVE_LOADED_AD];
+                _successCounter = [NSNumber numberWithInt:[_successCounter intValue] + 1];
+                [self setCountersText];
+            }
+        }];
     } else {
         [self.requestAdButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
         
@@ -596,7 +649,7 @@
 
 #pragma mark - FastLane
 
-- (void)didReceiveFastLaneAdInfo:(NSDictionary *)adInfo
+- (void)didReceiveFastLaneAdInfo:(NSDictionary *)adInfo rfmAppId:(NSString *)rfmAppId
 {
     if (self.adIsBanner) {
         if (self.adKeywords) {
@@ -640,7 +693,7 @@
     }
 }
 
-- (void)didFailToReceiveFastLaneAdWithReason:(NSString *)errorReason
+- (void)didFailToReceiveFastLaneAdWithReason:(NSString *)errorReason rfmAppId:(NSString *)rfmAppId
 {
    [self appendTextToConsoleView:[NSString stringWithFormat:@"%@: %@", CONSOLE_VIEW_FINAL_FASTLANE_FAILED_TO_RECEIVE_INFO, errorReason]];
     
@@ -655,5 +708,20 @@
         [self.interstitialAdView loadAd];
     }
 }
+
+#pragma mark - Native
+
+- (void)willPresentModalForNativeAd:(MPNativeAd *)nativeAd {
+    [self appendTextToConsoleView:CONSOLE_VIEW_NATIVE_WILL_PRESENT_MODAL];
+}
+
+- (void)didDismissModalForNativeAd:(MPNativeAd *)nativeAd {
+    [self appendTextToConsoleView:CONSOLE_VIEW_NATIVE_DID_DISMISS_MODAL];
+}
+
+- (void)willLeaveApplicationFromNativeAd:(MPNativeAd *)nativeAd {
+    [self appendTextToConsoleView:CONSOLE_VIEW_NATIVE_WILL_LEAVE_APPLICATION];
+}
+
 
 @end

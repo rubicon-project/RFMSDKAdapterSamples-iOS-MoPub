@@ -9,8 +9,8 @@ target 'MoPub-RFM Sample' do
 	pod 'ColorUtils', '~> 1.1'
 	pod 'iOS-Color-Picker', '~> 1.1'
 	pod 'SVProgressHUD', '~> 1.1'
-	pod 'CocoaLumberjack'
-	pod 'RFMAdSDK', '~> 5.0.0'
-        pod 'RFMSDKAdapter-iOS-MoPub', '~> 2.1.0'
+	pod 'CocoaLumberjack’, '~> 2.3.0’
+	pod 'RFMAdSDK', '~> 6.0.0’
+        pod 'RFMSDKAdapter-iOS-MoPub', '~> 3.0.0’
 	pod 'OHHTTPStubs', '~> 4.8.0'
 end
